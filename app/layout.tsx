@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Moso — Creative Studio | Design Your Future | Global Branding, Marketing & Software Design",
