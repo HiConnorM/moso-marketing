@@ -391,7 +391,7 @@ export default function Home() {
               <div className="split-section-top">
                 <div className="margin-bottom-medium">
                   {/* Branding Accordion */}
-                  <div className="accordion-item w-dropdown">
+                  <div data-hover="false" data-delay="750" className="accordion-item w-dropdown">
                     <div className="accordion-toggle w-dropdown-toggle">
                       <h3 className="accordion-title">Branding</h3>
                       <div className="accordion-icon">
@@ -401,9 +401,25 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
+                    <div className="accordion-content w-dropdown-list">
+                      <div className="accordion-content-inner">
+                        <div className="w-layout-grid grid-12-columns-small">
+                          <div>
+                            <p className="paragraph-small no-text-indent">We craft compelling brand identities that resonate with your audience and leave a lasting impression. From logo design to comprehensive brand strategies, we help you define who you are and stand out in a crowded market.</p>
+                          </div>
+                          <div className="icons-list">
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Brand Strategy</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Logo Design</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Brand Guidelines</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Rebranding</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Packaging Design</div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   {/* Design Accordion */}
-                  <div className="accordion-item w-dropdown">
+                  <div data-hover="false" data-delay="750" className="accordion-item w-dropdown">
                     <div className="accordion-toggle w-dropdown-toggle">
                       <h3 className="accordion-title">Design</h3>
                       <div className="accordion-icon">
@@ -413,9 +429,25 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
+                    <div className="accordion-content w-dropdown-list">
+                      <div className="accordion-content-inner">
+                        <div className="w-layout-grid grid-12-columns-small">
+                          <div>
+                            <p className="paragraph-small no-text-indent">Our design services bring creativity and function together, delivering user-friendly experiences and products. Whether it&apos;s graphic design, UI/UX, or motion graphics, we shape ideas into designs that captivate and engage.</p>
+                          </div>
+                          <div className="icons-list">
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Graphic Design</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">UI/UX Design</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Motion Design</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Print Design</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Environmental Design</div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   {/* Development Accordion */}
-                  <div className="accordion-item w-dropdown">
+                  <div data-hover="false" data-delay="750" className="accordion-item w-dropdown">
                     <div className="accordion-toggle w-dropdown-toggle">
                       <h3 className="accordion-title">Development</h3>
                       <div className="accordion-icon">
@@ -425,9 +457,52 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
+                    <div className="accordion-content w-dropdown-list">
+                      <div className="accordion-content-inner">
+                        <div className="w-layout-grid grid-12-columns-small">
+                          <div>
+                            <p className="paragraph-small no-text-indent">From robust websites to cutting-edge web applications, our development team builds fast, secure, and scalable digital solutions tailored to your needs. We transform designs into online experiences that deliver results.</p>
+                          </div>
+                          <div className="icons-list">
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Front-End</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Back-End</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">E-Commerce</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">CMS Development</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Web Applications</div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Advertising Accordion */}
+                  <div data-hover="false" data-delay="750" className="accordion-item w-dropdown">
+                    <div className="accordion-toggle w-dropdown-toggle">
+                      <h3 className="accordion-title">ADVERTISING</h3>
+                      <div className="accordion-icon">
+                        <div className="accordion-plus">
+                          <div className="accordin-plus-line-v"></div>
+                          <div className="accordin-plus-line-h"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="accordion-content w-dropdown-list">
+                      <div className="accordion-content-inner">
+                        <div className="w-layout-grid grid-12-columns-small">
+                          <div>
+                            <p className="paragraph-small no-text-indent">Our photography captures the essence of your brand with stunning visuals that tell your story. From product shoots to lifestyle and editorial photography, we create images that inspire and connect with your audience.</p>
+                          </div>
+                          <div className="icons-list">
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Product Photography</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Portrait Photography</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Event Photography</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Editorial Photography</div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   {/* Marketing Accordion */}
-                  <div className="accordion-item w-dropdown">
+                  <div data-hover="false" data-delay="750" className="accordion-item w-dropdown">
                     <div className="accordion-toggle w-dropdown-toggle">
                       <h3 className="accordion-title">Marketing</h3>
                       <div className="accordion-icon">
@@ -437,10 +512,26 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
+                    <div className="accordion-content w-dropdown-list">
+                      <div className="accordion-content-inner">
+                        <div className="w-layout-grid grid-12-columns-small">
+                          <div>
+                            <p className="paragraph-small no-text-indent">Our marketing strategies amplify your message and drive measurable growth. Through targeted campaigns, social media, SEO, and content marketing, we ensure your brand reaches the right people, at the right time, in the right way.</p>
+                          </div>
+                          <div className="icons-list">
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Digital Marketing</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Search Engines</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Social Media</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Paid Advertising</div></div>
+                            <div className="icons-list-item"><img src="/images/check-white.svg" loading="lazy" alt="" className="icons-list-image" /><div className="icons-list-text">Email Marketing</div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="split-section-bottom">
+              <div className="split-content-bottom">
                 <a href="/services" className="button white w-inline-block">
                   <div className="button-container">
                     <div className="overflow-hidden">
@@ -449,14 +540,445 @@ export default function Home() {
                           <img src="/images/OSO.png" loading="lazy" alt="" />
                         </div>
                         <div className="button-text-wrapper">
-                          <div className="button-text-front">View All Services</div>
-                          <div aria-hidden="true" className="button-text-back">View All Services</div>
+                          <div className="button-text-front">View our services</div>
+                          <div aria-hidden="true" className="button-text-back">View our services</div>
                         </div>
                         <div className="button-icon-front">
                           <img src="/images/OSO.png" loading="lazy" alt="" />
                         </div>
                       </div>
                     </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Portfolio Section */}
+        <section className="section">
+          <div className="w-layout-blockcontainer container-fluid w-container">
+            <div className="section-title">
+              <h2 className="section-title-text">Portfolio</h2>
+              <div className="section-title-text">(04)</div>
+              <div className="divider-bottom">
+                <div className="divider"></div>
+              </div>
+            </div>
+            <div className="w-layout-grid grid-12-columns-small">
+              <div>
+                <h3 className="heading-medium">Selected<br />Work</h3>
+              </div>
+              <div className="section-header-caption">
+                <div className="container-extra-small right">
+                  <div className="caption">Projects of years<br />©2021 — 2025</div>
+                </div>
+              </div>
+            </div>
+            <div data-current="Tab 1" data-easing="ease" data-duration-in="120" data-duration-out="120" className="portfolio-tabs w-tabs">
+              <div className="portfolio-tabs-menu w-tab-menu">
+                <a data-w-tab="Tab 1" className="portfolio-tab-link first w-inline-block w-tab-link w--current">
+                  <div className="portfolio-tab-active">
+                    <div className="portfolio-tab-active-background"></div>
+                  </div>
+                  <div className="portfolio-tab-text">Grid</div>
+                </a>
+                <a data-w-tab="Tab 2" className="portfolio-tab-link second w-inline-block w-tab-link">
+                  <div>List</div>
+                </a>
+              </div>
+              <div className="tabs-content w-tab-content">
+                <div data-w-tab="Tab 1" className="portfolio-tab-pane w-tab-pane w--tab-active">
+                  <div className="portfolio-tab-inner">
+                    <div className="margin-bottom-large">
+                      <div role="list" className="projects-grid">
+                        <div role="listitem" className="project-item">
+                          <a href="/portfolio" className="project-link w-inline-block">
+                            <img loading="lazy" src="/images/hero-work-1.jpg" alt="Blue Sky Project" className="project-thumbnail" />
+                            <div className="project-content">
+                              <div className="project-content-header">
+                                <div className="project-title-wrapper">
+                                  <div className="project-title-front">
+                                    <h4 className="project-title">Blue Sky</h4>
+                                  </div>
+                                  <div aria-hidden="true" className="project-title-back">
+                                    <div className="project-title">Blue Sky</div>
+                                  </div>
+                                </div>
+                                <div className="project-arrow">
+                                  <div className="project-arrow-inner">
+                                    <div className="project-arrow-front"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="project-arrow-image" /></div>
+                                    <div className="project-arrow-back"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="project-arrow-image" /></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="project-content-footer">
+                                <div className="project-label"><div className="project-label-text">Branding</div></div>
+                                <div className="project-label"><div className="project-label-text">Design</div></div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div role="listitem" className="project-item">
+                          <a href="/portfolio" className="project-link w-inline-block">
+                            <img loading="lazy" src="/images/hero-work-2.jpg" alt="George's Project" className="project-thumbnail" />
+                            <div className="project-content">
+                              <div className="project-content-header">
+                                <div className="project-title-wrapper">
+                                  <div className="project-title-front">
+                                    <h4 className="project-title">George&apos;s</h4>
+                                  </div>
+                                  <div aria-hidden="true" className="project-title-back">
+                                    <div className="project-title">George&apos;s</div>
+                                  </div>
+                                </div>
+                                <div className="project-arrow">
+                                  <div className="project-arrow-inner">
+                                    <div className="project-arrow-front"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="project-arrow-image" /></div>
+                                    <div className="project-arrow-back"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="project-arrow-image" /></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="project-content-footer">
+                                <div className="project-label"><div className="project-label-text">Development</div></div>
+                                <div className="project-label"><div className="project-label-text">Branding</div></div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div role="listitem" className="project-item">
+                          <a href="/portfolio" className="project-link w-inline-block">
+                            <img loading="lazy" src="/images/hero-work-3.jpg" alt="Tower Hotel Project" className="project-thumbnail" />
+                            <div className="project-content">
+                              <div className="project-content-header">
+                                <div className="project-title-wrapper">
+                                  <div className="project-title-front">
+                                    <h4 className="project-title">Tower Hotel</h4>
+                                  </div>
+                                  <div aria-hidden="true" className="project-title-back">
+                                    <div className="project-title">Tower Hotel</div>
+                                  </div>
+                                </div>
+                                <div className="project-arrow">
+                                  <div className="project-arrow-inner">
+                                    <div className="project-arrow-front"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="project-arrow-image" /></div>
+                                    <div className="project-arrow-back"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="project-arrow-image" /></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="project-content-footer">
+                                <div className="project-label"><div className="project-label-text">Branding</div></div>
+                                <div className="project-label"><div className="project-label-text">Development</div></div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div role="listitem" className="project-item">
+                          <a href="/portfolio" className="project-link w-inline-block">
+                            <img loading="lazy" src="/images/about.jpg" alt="Pixel Playground Project" className="project-thumbnail" />
+                            <div className="project-content">
+                              <div className="project-content-header">
+                                <div className="project-title-wrapper">
+                                  <div className="project-title-front">
+                                    <h4 className="project-title">Pixel Playground</h4>
+                                  </div>
+                                  <div aria-hidden="true" className="project-title-back">
+                                    <div className="project-title">Pixel Playground</div>
+                                  </div>
+                                </div>
+                                <div className="project-arrow">
+                                  <div className="project-arrow-inner">
+                                    <div className="project-arrow-front"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="project-arrow-image" /></div>
+                                    <div className="project-arrow-back"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="project-arrow-image" /></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="project-content-footer">
+                                <div className="project-label"><div className="project-label-text">Branding</div></div>
+                                <div className="project-label"><div className="project-label-text">Design</div></div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="w-layout-grid grid-12-columns-fixed-gap">
+                      <div className="container-small">
+                        <div className="margin-bottom-small">
+                          <p className="paragraph-small">Discover how our creativity transforms ideas into impactful digital experiences — explore more of our projects.</p>
+                        </div>
+                        <a href="/portfolio" className="button w-inline-block">
+                          <div className="button-container">
+                            <div className="overflow-hidden">
+                              <div className="button-inner">
+                                <div className="button-icon-back"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
+                                <div className="button-text-wrapper">
+                                  <div className="button-text-front">View all projects</div>
+                                  <div aria-hidden="true" className="button-text-back">View all projects</div>
+                                </div>
+                                <div className="button-icon-front"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-w-tab="Tab 2" className="portfolio-tab-pane w-tab-pane">
+                  <div className="portfolio-tab-inner">
+                    <div className="margin-bottom-large">
+                      <div className="position-relative">
+                        <div className="w-layout-grid grid-12-columns-small">
+                          <div>
+                            <div className="projects-list-image-wrapper">
+                              <div className="projects-list-image-inner"><img loading="lazy" src="/images/projects-list.jpg" alt="Project showcase" className="projects-list-image" /></div>
+                            </div>
+                            <div role="list" className="projects-list">
+                              <div role="listitem" className="projects-list-item">
+                                <a href="/portfolio" className="projects-list-link w-inline-block">
+                                  <div className="divider"></div>
+                                  <div className="projects-list-inner">
+                                    <div className="w-layout-grid projects-list-columns">
+                                      <div className="projects-list-column-first">
+                                        <h4 className="projects-list-title">Blue Sky</h4>
+                                      </div>
+                                      <div className="projects-list-text">
+                                        <div className="projects-list-categories">
+                                          <div>Branding</div>
+                                          <div className="projects-list-comma">,</div>
+                                          <div>Design</div>
+                                          <div className="projects-list-comma">,</div>
+                                        </div>
+                                      </div>
+                                      <div className="projects-list-column-last">
+                                        <div className="projects-list-arrow"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="projects-list-arrow-black" /><img loading="lazy" src="/images/arrow-up-right-white.svg" alt="" className="projects-list-arrow-white" /></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="projects-list-hover"></div>
+                                </a>
+                              </div>
+                              <div role="listitem" className="projects-list-item">
+                                <a href="/portfolio" className="projects-list-link w-inline-block">
+                                  <div className="divider"></div>
+                                  <div className="projects-list-inner">
+                                    <div className="w-layout-grid projects-list-columns">
+                                      <div className="projects-list-column-first">
+                                        <h4 className="projects-list-title">George&apos;s</h4>
+                                      </div>
+                                      <div className="projects-list-text">
+                                        <div className="projects-list-categories">
+                                          <div>Development</div>
+                                          <div className="projects-list-comma">,</div>
+                                          <div>Branding</div>
+                                          <div className="projects-list-comma">,</div>
+                                        </div>
+                                      </div>
+                                      <div className="projects-list-column-last">
+                                        <div className="projects-list-arrow"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="projects-list-arrow-black" /><img loading="lazy" src="/images/arrow-up-right-white.svg" alt="" className="projects-list-arrow-white" /></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="projects-list-hover"></div>
+                                </a>
+                              </div>
+                              <div role="listitem" className="projects-list-item">
+                                <a href="/portfolio" className="projects-list-link w-inline-block">
+                                  <div className="divider"></div>
+                                  <div className="projects-list-inner">
+                                    <div className="w-layout-grid projects-list-columns">
+                                      <div className="projects-list-column-first">
+                                        <h4 className="projects-list-title">Tower Hotel</h4>
+                                      </div>
+                                      <div className="projects-list-text">
+                                        <div className="projects-list-categories">
+                                          <div>Branding</div>
+                                          <div className="projects-list-comma">,</div>
+                                          <div>Development</div>
+                                          <div className="projects-list-comma">,</div>
+                                        </div>
+                                      </div>
+                                      <div className="projects-list-column-last">
+                                        <div className="projects-list-arrow"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="projects-list-arrow-black" /><img loading="lazy" src="/images/arrow-up-right-white.svg" alt="" className="projects-list-arrow-white" /></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="projects-list-hover"></div>
+                                </a>
+                              </div>
+                              <div role="listitem" className="projects-list-item">
+                                <a href="/portfolio" className="projects-list-link w-inline-block">
+                                  <div className="divider"></div>
+                                  <div className="projects-list-inner">
+                                    <div className="w-layout-grid projects-list-columns">
+                                      <div className="projects-list-column-first">
+                                        <h4 className="projects-list-title">Pixel Playground</h4>
+                                      </div>
+                                      <div className="projects-list-text">
+                                        <div className="projects-list-categories">
+                                          <div>Branding</div>
+                                          <div className="projects-list-comma">,</div>
+                                          <div>Design</div>
+                                          <div className="projects-list-comma">,</div>
+                                        </div>
+                                      </div>
+                                      <div className="projects-list-column-last">
+                                        <div className="projects-list-arrow"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="projects-list-arrow-black" /><img loading="lazy" src="/images/arrow-up-right-white.svg" alt="" className="projects-list-arrow-white" /></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="projects-list-hover"></div>
+                                </a>
+                              </div>
+                              <div role="listitem" className="projects-list-item">
+                                <a href="/portfolio" className="projects-list-link w-inline-block">
+                                  <div className="divider"></div>
+                                  <div className="projects-list-inner">
+                                    <div className="w-layout-grid projects-list-columns">
+                                      <div className="projects-list-column-first">
+                                        <h4 className="projects-list-title">Medium Scene</h4>
+                                      </div>
+                                      <div className="projects-list-text">
+                                        <div className="projects-list-categories">
+                                          <div>Design</div>
+                                          <div className="projects-list-comma">,</div>
+                                          <div>Development</div>
+                                          <div className="projects-list-comma">,</div>
+                                        </div>
+                                      </div>
+                                      <div className="projects-list-column-last">
+                                        <div className="projects-list-arrow"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="projects-list-arrow-black" /><img loading="lazy" src="/images/arrow-up-right-white.svg" alt="" className="projects-list-arrow-white" /></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="projects-list-hover"></div>
+                                </a>
+                              </div>
+                              <div role="listitem" className="projects-list-item">
+                                <a href="/portfolio" className="projects-list-link w-inline-block">
+                                  <div className="divider"></div>
+                                  <div className="projects-list-inner">
+                                    <div className="w-layout-grid projects-list-columns">
+                                      <div className="projects-list-column-first">
+                                        <h4 className="projects-list-title">Visual Symphony</h4>
+                                      </div>
+                                      <div className="projects-list-text">
+                                        <div className="projects-list-categories">
+                                          <div>Branding</div>
+                                          <div className="projects-list-comma">,</div>
+                                          <div>Development</div>
+                                          <div className="projects-list-comma">,</div>
+                                        </div>
+                                      </div>
+                                      <div className="projects-list-column-last">
+                                        <div className="projects-list-arrow"><img loading="lazy" src="/images/arrow-up-right.svg" alt="" className="projects-list-arrow-black" /><img loading="lazy" src="/images/arrow-up-right-white.svg" alt="" className="projects-list-arrow-white" /></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="projects-list-hover"></div>
+                                </a>
+                              </div>
+                            </div>
+                            <div className="divider"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="w-layout-grid grid-12-columns-small">
+                      <div>
+                        <div className="container-small">
+                          <div className="margin-bottom-small">
+                            <p className="paragraph-small">Discover how our creativity transforms ideas into impactful digital experiences — explore more of our projects.</p>
+                          </div>
+                          <a href="/portfolio" className="button w-inline-block">
+                            <div className="button-container">
+                              <div className="overflow-hidden">
+                                <div className="button-inner">
+                                  <div className="button-icon-back"><img src="/images/spark.svg" loading="lazy" alt="" /></div>
+                                  <div className="button-text-wrapper">
+                                    <div className="button-text-front">View all projects</div>
+                                    <div aria-hidden="true" className="button-text-back">View all projects</div>
+                                  </div>
+                                  <div className="button-icon-front"><img src="/images/spark.svg" loading="lazy" alt="" /></div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Blog Section */}
+        <section className="section">
+          <div className="overflow-hidden">
+            <div className="w-layout-blockcontainer container-fluid w-container">
+              <div className="section-title">
+                <h2 className="section-title-text">Blog</h2>
+                <div className="section-title-text">(05)</div>
+                <div className="divider-bottom">
+                  <div className="divider"></div>
+                </div>
+              </div>
+              <div className="w-layout-grid grid-12-columns-small">
+                <div>
+                  <h3 className="heading-medium">News /</h3>
+                </div>
+                <div className="section-header-caption">
+                  <div className="container-extra-small right">
+                    <p className="paragraph-small">Discover the inspiration with the latest trends, tips, and stories from the forefront of design and digital innovation.</p>
+                    <a href="/blog" className="button w-inline-block">
+                      <div className="button-container">
+                        <div className="overflow-hidden">
+                          <div className="button-inner">
+                            <div className="button-icon-back"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
+                            <div className="button-text-wrapper">
+                              <div className="button-text-front">View Our Blog</div>
+                              <div aria-hidden="true" className="button-text-back">View Our Blog</div>
+                            </div>
+                            <div className="button-icon-front"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="blog-grid">
+                <a href="/blog" className="blog-link w-inline-block">
+                  <div className="blog-thumbnail">
+                    <img loading="lazy" alt="Blog post thumbnail" src="/images/service-1.jpg" className="blog-thumbnail-image" />
+                  </div>
+                  <div className="blog-item-intro">
+                    <div className="blog-item-circle"></div>
+                    <h4 className="blog-item-title">Brave is on the Quest for Exceptional Talent to Join Our Team</h4>
+                    <div className="blog-item-date">December 1, 2025</div>
+                  </div>
+                </a>
+                <a href="/blog" className="blog-link w-inline-block">
+                  <div className="blog-thumbnail">
+                    <img loading="lazy" alt="Blog post thumbnail" src="/images/service-2.jpg" className="blog-thumbnail-image" />
+                  </div>
+                  <div className="blog-item-intro">
+                    <div className="blog-item-circle"></div>
+                    <h4 className="blog-item-title">Crafting the Design for Beyond the Screen Digital Products Marketplace</h4>
+                    <div className="blog-item-date">December 1, 2025</div>
+                  </div>
+                </a>
+                <a href="/blog" className="blog-link w-inline-block">
+                  <div className="blog-thumbnail">
+                    <img loading="lazy" alt="Blog post thumbnail" src="/images/service-3.jpg" className="blog-thumbnail-image" />
+                  </div>
+                  <div className="blog-item-intro">
+                    <div className="blog-item-circle"></div>
+                    <h4 className="blog-item-title">Reimagining Reality Claims Site of the Week at Awwwards!</h4>
+                    <div className="blog-item-date">December 1, 2025</div>
                   </div>
                 </a>
               </div>

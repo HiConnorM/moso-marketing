@@ -1,0 +1,309 @@
+"use client"
+
+import { useEffect } from "react"
+import Script from "next/script"
+
+export default function About() {
+  useEffect(() => {
+    const pageWrapper = document.querySelector('.page-wrapper') as HTMLElement
+    if (pageWrapper) {
+      pageWrapper.style.opacity = '1'
+    }
+  }, [])
+
+  return (
+    <>
+      <div style={{ opacity: 0 }} className="page-wrapper">
+        <div id="top" className="top"></div>
+        <div className="div-block-2">
+          <nav className="navbar">
+            <div className="navbar-glass-effect"></div>
+            <div className="navbar-glass-tint"></div>
+            <div className="navbar-glass-shine"></div>
+            <div data-animation="default" data-collapse="tiny" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" className="navbar-wrapper w-nav">
+              <div className="navbar-container">
+                <div className="navbar-logo-desktop">
+                  <a href="/" className="navbar-logo-link w-nav-brand">
+                    <img loading="lazy" height={200} alt="MOSO Logo" src="/images/OSO.svg" className="image-2" />
+                  </a>
+                </div>
+                <div className="navbar-logo-mobile">
+                  <a href="/" className="navbar-logo-link w-nav-brand">
+                    <img loading="lazy" height="auto" alt="MOSO Logo" src="/images/OSO-4.png" className="image-2" />
+                  </a>
+                </div>
+                <nav role="navigation" className="navbar-menu w-nav-menu">
+                  <div className="navbar-menu-left">
+                    <a href="/portfolio" className="navbar-link w-nav-link">Portfolio</a>
+                    <a href="/services" className="navbar-link w-nav-link">Services</a>
+                    <div data-delay="300" data-hover="false" className="menu-dropdown w-dropdown">
+                      <div className="dropdown-toggle w-dropdown-toggle">
+                        <div className="w-icon-dropdown-toggle"></div>
+                        <div className="dropdown-title">Resources</div>
+                      </div>
+                      <nav className="dropdown-list w-dropdown-list">
+                        <div className="dropdown-link-menu">
+                          <a href="/blog" className="dropdown-link w-inline-block">
+                            <div className="dropdown-links">Blog</div>
+                          </a>
+                        </div>
+                      </nav>
+                    </div>
+                    <a href="/contact" className="navbar-link w-nav-link">Contact</a>
+                  </div>
+                  <div className="navbar-menu-right">
+                    <div className="navbar-button-wrapper">
+                      <a href="/contact" className="button white w-inline-block">
+                        <div className="button-container">
+                          <div className="overflow-hidden">
+                            <div className="button-inner">
+                              <div className="button-icon-back">
+                                <img src="/images/OSO.png" loading="lazy" alt="" />
+                              </div>
+                              <div className="button-text-wrapper">
+                                <div className="button-text-front">Get started</div>
+                                <div aria-hidden="true" className="button-text-back">Get started</div>
+                              </div>
+                              <div className="button-icon-front">
+                                <img src="/images/OSO.png" loading="lazy" alt="" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </nav>
+                <div className="navbar-menu-button w-nav-button">
+                  <div className="menu-icon-component">
+                    <div className="menu-icon-line-top"></div>
+                    <div className="menu-icon-line-middle">
+                      <div className="menu-icon-middle-line"></div>
+                    </div>
+                    <div className="menu-icon-2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        {/* Page Header */}
+        <section className="section-page-header">
+          <div className="page-header-background">
+            <img src="/images/about-fullwidth.jpg" loading="eager" alt="" className="page-header-background-image" />
+          </div>
+          <div className="w-layout-blockcontainer container w-container">
+            <div className="page-header-content">
+              <div className="page-header-title">
+                <h1 className="page-header-heading">About Us</h1>
+              </div>
+              <div className="page-header-description">
+                <p className="paragraph-large">We are a creative studio that loves making beautiful websites and premium products.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About Content */}
+        <section className="section">
+          <div className="w-layout-blockcontainer container w-container">
+            <div className="w-layout-grid grid-12-columns">
+              <div className="about-section-content">
+                <div className="has-title-vertical">
+                  <div className="title-vertical-wrapper">
+                    <div className="number-vertical">
+                      <div className="number-vertical-inner">
+                        <div className="section-title-text">(01)</div>
+                      </div>
+                    </div>
+                    <div className="title-vertical">
+                      <h2 className="section-title-text">Who We Are</h2>
+                    </div>
+                    <div className="divider-vertical"></div>
+                  </div>
+                  <div className="about-section-content-inner">
+                    <div className="margin-bottom-medium">
+                      <h3 className="heading-small">Crafting ideas<br />that inspire</h3>
+                    </div>
+                    <div className="about-section-bottom">
+                      <div className="margin-bottom-medium">
+                        <p className="paragraph-large">
+                          We are a creative studio that loves making beautiful websites and premium products. We&apos;ve won some awards for our work. We&apos;re really good at creating brands, designing cool stuff, and making things work just right. At our core, we believe in the power of simplicity and effectiveness.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="about-image-wrapper">
+                <div className="about-image-inner">
+                  <img src="/images/about-1.jpg" loading="lazy" alt="" className="about-image" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="section">
+          <div className="w-layout-blockcontainer container w-container">
+            <div className="section-title">
+              <h2 className="section-title-text">Our Team</h2>
+              <div className="section-title-text">(02)</div>
+              <div className="divider-bottom">
+                <div className="divider"></div>
+              </div>
+            </div>
+            <div className="w-layout-grid team-grid">
+              <div className="team-item">
+                <div className="team-image-wrapper">
+                  <img src="/images/team-1.jpg" loading="lazy" alt="" className="team-image" />
+                </div>
+                <div className="team-content">
+                  <h4 className="team-name">John Smith</h4>
+                  <div className="team-role">Creative Director</div>
+                </div>
+              </div>
+              <div className="team-item">
+                <div className="team-image-wrapper">
+                  <img src="/images/team-2.jpg" loading="lazy" alt="" className="team-image" />
+                </div>
+                <div className="team-content">
+                  <h4 className="team-name">Sarah Johnson</h4>
+                  <div className="team-role">Lead Designer</div>
+                </div>
+              </div>
+              <div className="team-item">
+                <div className="team-image-wrapper">
+                  <img src="/images/team-3.jpg" loading="lazy" alt="" className="team-image" />
+                </div>
+                <div className="team-content">
+                  <h4 className="team-name">Mike Davis</h4>
+                  <div className="team-role">Developer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <section className="footer">
+          <div className="footer-rows">
+            <div className="footer-row-top">
+              <div className="w-layout-blockcontainer container-fluid w-container">
+                <div className="w-layout-grid grid-12-columns-small">
+                  <div className="footer-widget">
+                    <div className="margin-bottom-extra-small">
+                      <div>Have a project in mind?</div>
+                    </div>
+                    <a href="/contact" className="button white small w-inline-block">
+                      <div className="button-container small">
+                        <div className="overflow-hidden">
+                          <div className="button-text-wrapper">
+                            <div className="button-text-front">Let&apos;s Talk</div>
+                            <div aria-hidden="true" className="button-text-back">Let&apos;s Talk</div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div>
+                    <div className="w-layout-grid grid-12-columns-zero">
+                      <div className="footer-widget">
+                        <div className="footer-links-wrapper">
+                          <a href="#" target="_blank" className="footer-link w-inline-block">
+                            <div className="footer-link-inner">
+                              <div className="footer-link-front"><div>Facebook</div></div>
+                              <div className="footer-link-back"><div>Facebook</div></div>
+                            </div>
+                          </a>
+                          <a href="#" target="_blank" className="footer-link w-inline-block">
+                            <div className="footer-link-inner">
+                              <div className="footer-link-front"><div>Instagram</div></div>
+                              <div className="footer-link-back"><div>Instagram</div></div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div className="footer-widget">
+                        <div className="footer-links-wrapper">
+                          <a href="#" target="_blank" className="footer-link w-inline-block">
+                            <div className="footer-link-inner">
+                              <div className="footer-link-front"><div>TikTok</div></div>
+                              <div className="footer-link-back"><div>TikTok</div></div>
+                            </div>
+                          </a>
+                          <a href="#" target="_blank" className="footer-link w-inline-block">
+                            <div className="footer-link-inner">
+                              <div className="footer-link-front"><div>LinkedIn</div></div>
+                              <div className="footer-link-back"><div>LinkedIn</div></div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="footer-widget align-right">
+                    <a href="#top" className="back-top-link w-inline-block">
+                      <div className="back-top-icon">
+                        <div className="back-top-icon-inner">
+                          <div className="back-top-icon-front"><img src="/images/arrow-up.svg" loading="lazy" alt="" className="back-top-icon-image" /></div>
+                          <div className="back-top-icon-back"><img src="/images/arrow-up.svg" loading="lazy" alt="" className="back-top-icon-image" /></div>
+                        </div>
+                      </div>
+                      <div className="back-top-text">Back to top</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="footer-row-middle">
+              <div className="overflow-hidden">
+                <div className="marquee">
+                  <div className="marquee-track gutter-large">
+                    <div className="marquee-item"><h2 className="footer-heading">MOSO</h2></div>
+                    <div aria-hidden="true" className="marquee-item"><div className="footer-heading">MOSO</div></div>
+                    <div aria-hidden="true" className="marquee-item"><div className="footer-heading">MOSO</div></div>
+                    <div aria-hidden="true" className="marquee-item"><div className="footer-heading">MOSO</div></div>
+                    <div aria-hidden="true" className="marquee-item"><div className="footer-heading">MOSO</div></div>
+                    <div aria-hidden="true" className="marquee-item"><div className="footer-heading">MOSO</div></div>
+                  </div>
+                </div>
+                <div className="marquee reverse">
+                  <div className="marquee-track-reverse gutter-large">
+                    <div className="marquee-item margin-left"><h2 className="footer-heading">AGENCY</h2></div>
+                    <div aria-hidden="true" className="marquee-item margin-left"><div className="footer-heading">AGENCY</div></div>
+                    <div aria-hidden="true" className="marquee-item margin-left"><div className="footer-heading">AGENCY</div></div>
+                    <div aria-hidden="true" className="marquee-item margin-left"><div className="footer-heading">AGENCY</div></div>
+                    <div aria-hidden="true" className="marquee-item margin-left"><div className="footer-heading">AGENCY</div></div>
+                    <div aria-hidden="true" className="marquee-item margin-left"><div className="footer-heading">AGENCY</div></div>
+                  </div>
+                </div>
+              </div>
+              <div className="footer-circle-wrapper">
+                <a href="/contact" className="footer-circle-link w-inline-block">
+                  <div className="footer-circle-backgound">
+                    <div className="footer-circle-border"></div>
+                  </div>
+                  <img src="/images/footer-circle-text.svg" loading="lazy" alt="Let's talk! Say hello!" className="footer-circle-image" />
+                  <div className="footer-circle-icon-wrapper">
+                    <div className="footer-circle-icon-front"><img src="/images/OSO-4.png" loading="lazy" alt="" className="footer-circle-image" /></div>
+                    <div className="footer-circle-icon-back"><img src="/images/OSO-4.png" loading="lazy" alt="" className="footer-circle-image" /></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="footer-row-bottom"></div>
+          </div>
+        </section>
+      </div>
+
+      <Script 
+        src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67ea24be240797066a84755c" 
+        strategy="beforeInteractive"
+      />
+      <Script src="/js/webflow.js" strategy="afterInteractive" />
+    </>
+  )
+}
