@@ -78,14 +78,14 @@ export default function Home() {
                           <div className="overflow-hidden">
                             <div className="button-inner">
                               <div className="button-icon-back">
-                                <img src="/images/OSO.jpg" loading="lazy" alt="" />
+                                <img src="/images/OSO.png" loading="lazy" alt="" />
                               </div>
                               <div className="button-text-wrapper">
                                 <div className="button-text-front">Get started</div>
                                 <div aria-hidden="true" className="button-text-back">Get started</div>
                               </div>
                               <div className="button-icon-front">
-                                <img src="/images/OSO.jpg" loading="lazy" alt="" />
+                                <img src="/images/OSO.png" loading="lazy" alt="" />
                               </div>
                             </div>
                           </div>
@@ -207,14 +207,14 @@ export default function Home() {
                           <div className="overflow-hidden">
                             <div className="button-inner">
                               <div className="button-icon-back">
-                                <img src="/images/OSO.jpg" loading="lazy" alt="" />
+                                <img src="/images/OSO.png" loading="lazy" alt="" />
                               </div>
                               <div className="button-text-wrapper">
                                 <div className="button-text-front">View Our Works</div>
                                 <div aria-hidden="true" className="button-text-back">View Our Works</div>
                               </div>
                               <div className="button-icon-front">
-                                <img src="/images/OSO.jpg" loading="lazy" alt="" />
+                                <img src="/images/OSO.png" loading="lazy" alt="" />
                               </div>
                             </div>
                           </div>
@@ -267,14 +267,14 @@ export default function Home() {
                             <div className="overflow-hidden">
                               <div className="button-inner">
                                 <div className="button-icon-back">
-                                  <img src="/images/OSO.jpg" loading="lazy" alt="" />
+                                  <img src="/images/OSO.png" loading="lazy" alt="" />
                                 </div>
                                 <div className="button-text-wrapper">
                                   <div className="button-text-front">More About Us</div>
                                   <div aria-hidden="true" className="button-text-back">More About Us</div>
                                 </div>
                                 <div className="button-icon-front">
-                                  <img src="/images/OSO.jpg" loading="lazy" alt="" />
+                                  <img src="/images/OSO.png" loading="lazy" alt="" />
                                 </div>
                               </div>
                             </div>
@@ -537,14 +537,14 @@ export default function Home() {
                     <div className="overflow-hidden">
                       <div className="button-inner">
                         <div className="button-icon-back">
-                          <img src="/images/OSO.jpg" loading="lazy" alt="" />
+                          <img src="/images/OSO.png" loading="lazy" alt="" />
                         </div>
                         <div className="button-text-wrapper">
                           <div className="button-text-front">View our services</div>
                           <div aria-hidden="true" className="button-text-back">View our services</div>
                         </div>
                         <div className="button-icon-front">
-                          <img src="/images/OSO.jpg" loading="lazy" alt="" />
+                          <img src="/images/OSO.png" loading="lazy" alt="" />
                         </div>
                       </div>
                     </div>
@@ -711,12 +711,12 @@ export default function Home() {
                           <div className="button-container">
                             <div className="overflow-hidden">
                               <div className="button-inner">
-                                <div className="button-icon-back"><img src="/images/OSO.jpg" loading="lazy" alt="" /></div>
+                                <div className="button-icon-back"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
                                 <div className="button-text-wrapper">
                                   <div className="button-text-front">View all projects</div>
                                   <div aria-hidden="true" className="button-text-back">View all projects</div>
                                 </div>
-                                <div className="button-icon-front"><img src="/images/OSO.jpg" loading="lazy" alt="" /></div>
+                                <div className="button-icon-front"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
                               </div>
                             </div>
                           </div>
@@ -937,12 +937,12 @@ export default function Home() {
                       <div className="button-container">
                         <div className="overflow-hidden">
                           <div className="button-inner">
-                            <div className="button-icon-back"><img src="/images/OSO.jpg" loading="lazy" alt="" /></div>
+                            <div className="button-icon-back"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
                             <div className="button-text-wrapper">
                               <div className="button-text-front">View Our Blog</div>
                               <div aria-hidden="true" className="button-text-back">View Our Blog</div>
                             </div>
-                            <div className="button-icon-front"><img src="/images/OSO.jpg" loading="lazy" alt="" /></div>
+                            <div className="button-icon-front"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
                           </div>
                         </div>
                       </div>

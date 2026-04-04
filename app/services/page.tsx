@@ -57,12 +57,12 @@ export default function Services() {
                         <div className="button-container">
                           <div className="overflow-hidden">
                             <div className="button-inner">
-                              <div className="button-icon-back"><img src="/images/OSO.jpg" loading="lazy" alt="" /></div>
+                              <div className="button-icon-back"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
                               <div className="button-text-wrapper">
                                 <div className="button-text-front">Get started</div>
                                 <div aria-hidden="true" className="button-text-back">Get started</div>
                               </div>
-                              <div className="button-icon-front"><img src="/images/OSO.jpg" loading="lazy" alt="" /></div>
+                              <div className="button-icon-front"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
                             </div>
                           </div>
                         </div>
@@ -195,12 +195,12 @@ export default function Services() {
                 <div className="button-container">
                   <div className="overflow-hidden">
                     <div className="button-inner">
-                      <div className="button-icon-back"><img src="/images/OSO.jpg" loading="lazy" alt="" /></div>
+                      <div className="button-icon-back"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
                       <div className="button-text-wrapper">
                         <div className="button-text-front">Get in Touch</div>
                         <div aria-hidden="true" className="button-text-back">Get in Touch</div>
                       </div>
-                      <div className="button-icon-front"><img src="/images/OSO.jpg" loading="lazy" alt="" /></div>
+                      <div className="button-icon-front"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
                     </div>
                   </div>
                 </div>
