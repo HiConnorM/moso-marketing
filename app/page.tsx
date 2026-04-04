@@ -37,7 +37,7 @@ export default function Home() {
                 </div>
                 <div className="navbar-logo-mobile">
                   <a href="/" className="navbar-logo-link w-nav-brand">
-                    <img loading="lazy" height="auto" alt="MOSO Logo" src="/images/OSO-4.png" className="image-2" />
+                    <img loading="lazy" height="auto" alt="MOSO Logo" src="/images/OSO-4.jpg" className="image-2" />
                   </a>
                 </div>
                 <nav role="navigation" className="navbar-menu w-nav-menu">
@@ -361,7 +361,7 @@ export default function Home() {
               <div className="mission-image-wrapper">
                 <div className="mission-image">
                   <div className="image-placeholder"></div>
-                  <img src="/images/_.jpeg" loading="lazy" alt="" className="image-cover" />
+                  <img src="/images/_.jpg" loading="lazy" alt="" className="image-cover" />
                 </div>
               </div>
               <div className="mission-text">
@@ -1132,10 +1132,10 @@ export default function Home() {
                   <img src="/images/footer-circle-text.svg" loading="lazy" alt="Let's talk! Say hello!" className="footer-circle-image" />
                   <div className="footer-circle-icon-wrapper">
                     <div className="footer-circle-icon-front">
-                      <img src="/images/OSO-4.png" loading="lazy" alt="" className="footer-circle-image" />
+                      <img src="/images/OSO-4.jpg" loading="lazy" alt="" className="footer-circle-image" />
                     </div>
                     <div className="footer-circle-icon-back">
-                      <img src="/images/OSO-4.png" loading="lazy" alt="" className="footer-circle-image" />
+                      <img src="/images/OSO-4.jpg" loading="lazy" alt="" className="footer-circle-image" />
                     </div>
                   </div>
                 </a>

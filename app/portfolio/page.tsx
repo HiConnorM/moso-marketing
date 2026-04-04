@@ -29,7 +29,7 @@ export default function Portfolio() {
                 </div>
                 <div className="navbar-logo-mobile">
                   <a href="/" className="navbar-logo-link w-nav-brand">
-                    <img loading="lazy" height="auto" alt="MOSO Logo" src="/images/OSO-4.png" className="image-2" />
+                    <img loading="lazy" height="auto" alt="MOSO Logo" src="/images/OSO-4.jpg" className="image-2" />
                   </a>
                 </div>
                 <nav role="navigation" className="navbar-menu w-nav-menu">
@@ -57,12 +57,12 @@ export default function Portfolio() {
                         <div className="button-container">
                           <div className="overflow-hidden">
                             <div className="button-inner">
-                              <div className="button-icon-back"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
+                              <div className="button-icon-back"><img src="/images/OSO.jpg" loading="lazy" alt="" /></div>
                               <div className="button-text-wrapper">
                                 <div className="button-text-front">Get started</div>
                                 <div aria-hidden="true" className="button-text-back">Get started</div>
                               </div>
-                              <div className="button-icon-front"><img src="/images/OSO.png" loading="lazy" alt="" /></div>
+                              <div className="button-icon-front"><img src="/images/OSO.jpg" loading="lazy" alt="" /></div>
                             </div>
                           </div>
                         </div>
@@ -338,8 +338,8 @@ export default function Portfolio() {
                   <div className="footer-circle-backgound"><div className="footer-circle-border"></div></div>
                   <img src="/images/footer-circle-text.svg" loading="lazy" alt="Let's talk!" className="footer-circle-image" />
                   <div className="footer-circle-icon-wrapper">
-                    <div className="footer-circle-icon-front"><img src="/images/OSO-4.png" loading="lazy" alt="" className="footer-circle-image" /></div>
-                    <div className="footer-circle-icon-back"><img src="/images/OSO-4.png" loading="lazy" alt="" className="footer-circle-image" /></div>
+                    <div className="footer-circle-icon-front"><img src="/images/OSO-4.jpg" loading="lazy" alt="" className="footer-circle-image" /></div>
+                    <div className="footer-circle-icon-back"><img src="/images/OSO-4.jpg" loading="lazy" alt="" className="footer-circle-image" /></div>
                   </div>
                 </a>
               </div>

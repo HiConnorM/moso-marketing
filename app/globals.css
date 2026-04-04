@@ -2,12 +2,7 @@
 
 /* Smooth page transitions */
 .page-wrapper {
-  transition: opacity 0.3s ease-in-out;
-}
-
-/* Fix for Webflow animations */
-html.w-mod-js *[data-ix="fade-in-on-load"] {
-  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 /* Ensure smooth scrolling */
@@ -24,11 +19,6 @@ html {
   z-index: 1000;
 }
 
-/* Ensure page content doesn't go under navbar */
-.page-wrapper {
-  padding-top: 0;
-}
-
 /* Animation for page load */
 @keyframes fadeIn {
   from {
@@ -41,8 +31,26 @@ html {
   }
 }
 
-.page-wrapper.loaded {
-  animation: fadeIn 0.5s ease-out forwards;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Marquee animations */
@@ -87,54 +95,109 @@ html {
 }
 
 /* Button hover effects */
+.button .button-inner {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 .button:hover .button-inner {
   transform: translateY(-100%);
 }
 
-/* Project hover effects */
+/* Project card hover effects */
+.project-link .project-thumbnail {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 .project-link:hover .project-thumbnail {
   transform: scale(1.05);
+}
+
+.project-arrow-inner {
+  transition: transform 0.3s ease;
 }
 
 .project-link:hover .project-arrow-inner {
   transform: translateY(-100%);
 }
 
-/* Back to top smooth scroll */
-.back-top-link {
-  transition: opacity 0.3s ease;
+.project-title-wrapper {
+  overflow: hidden;
+}
+
+.project-title-front,
+.project-title-back {
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover .project-title-front {
+  transform: translateY(-100%);
+}
+
+.project-link:hover .project-title-back {
+  transform: translateY(-100%);
 }
 
 /* Accordion animations */
-.accordion-item .accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+.accordion-item {
+  cursor: pointer;
 }
 
-.accordion-item.w--open .accordion-content {
-  max-height: 500px;
+.accordion-toggle {
+  transition: padding 0.3s ease;
 }
 
-/* Hero image parallax effect */
+.accordion-content {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.accordion-plus {
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.w--open .accordion-plus {
+  transform: rotate(45deg);
+}
+
+/* Hero section parallax */
 .hero-work-wrapper {
   overflow: hidden;
 }
 
 .hero-work-wrapper img {
-  transition: transform 0.5s ease;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero-work-wrapper:hover img {
+  transform: scale(1.03);
 }
 
 /* Blog item hover */
+.blog-link .blog-thumbnail-image {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 .blog-link:hover .blog-thumbnail-image {
   transform: scale(1.05);
 }
 
-/* Navigation link underline effect */
+.blog-item-circle {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.blog-link:hover .blog-item-circle {
+  transform: scale(1.2);
+  background-color: var(--color--primary, black);
+}
+
+/* Navigation link hover effects */
+.navbar-link {
+  position: relative;
+}
+
 .navbar-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 0;
   height: 1px;
@@ -147,20 +210,108 @@ html {
 }
 
 /* Footer link hover */
+.footer-link-inner {
+  transition: transform 0.3s ease;
+}
+
 .footer-link:hover .footer-link-inner {
   transform: translateY(-100%);
 }
 
-/* Loading state */
-body.loading {
-  overflow: hidden;
+/* Projects list hover */
+.projects-list-link {
+  transition: background-color 0.3s ease;
 }
 
-body.loading .page-wrapper {
-  opacity: 0;
+.projects-list-hover {
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Responsive adjustments */
+.projects-list-link:hover .projects-list-hover {
+  width: 100%;
+}
+
+.projects-list-arrow {
+  transition: transform 0.3s ease;
+}
+
+.projects-list-link:hover .projects-list-arrow {
+  transform: translateX(5px);
+}
+
+/* Service item hover */
+.service-item {
+  transition: background-color 0.3s ease;
+}
+
+.service-item:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Team member hover */
+.team-member-image {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.team-member:hover .team-member-image {
+  transform: scale(1.05);
+}
+
+/* Back to top button */
+.back-top-link {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.back-top-link:hover {
+  transform: translateY(-5px);
+}
+
+/* Image reveal animation */
+@keyframes imageReveal {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Text reveal animation */
+@keyframes textReveal {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation helper classes */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Split section image hover */
+.split-image {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.split-section:hover .split-image {
+  transform: scale(1.03);
+}
+
+/* Portfolio tabs */
+.portfolio-tab-link {
+  transition: color 0.3s ease;
+}
+
+.portfolio-tab-active-background {
+  transition: transform 0.3s ease;
+}
+
+/* Mobile menu animations */
 @media (max-width: 991px) {
   .navbar-menu {
     position: fixed;
@@ -170,14 +321,21 @@ body.loading .page-wrapper {
     bottom: 0;
     background: white;
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   
-  .navbar-menu.open {
+  .navbar-menu.w--open {
     transform: translateX(0);
+  }
+  
+  .menu-icon-line-top,
+  .menu-icon-line-middle,
+  .menu-icon-2 {
+    transition: transform 0.3s ease;
   }
 }
 
+/* Responsive adjustments */
 @media (max-width: 767px) {
   .hero-work-wrapper {
     flex-direction: column;
@@ -185,5 +343,47 @@ body.loading .page-wrapper {
   
   .split-section {
     flex-direction: column;
+  }
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Cursor effects (optional) */
+.cursor-hover {
+  cursor: pointer;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
   }
 }
