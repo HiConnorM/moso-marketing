@@ -10,6 +10,98 @@ export default function Home() {
     if (pageWrapper) {
       pageWrapper.style.opacity = '1'
     }
+
+    // Setup IntersectionObserver for scroll animations
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    }
+
+    const animateOnScroll = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate')
+        }
+      })
+    }, observerOptions)
+
+    // Observe heading rotations for animation
+    document.querySelectorAll('.heading-rotation').forEach((el) => {
+      animateOnScroll.observe(el)
+    })
+
+    // Observe mission heading wrappers for staggered animation
+    const missionSection = document.querySelector('.overflow-hidden .mission-heading-wrapper')?.closest('.overflow-hidden')
+    if (missionSection) {
+      const missionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Trigger all heading rotations within the mission section with stagger
+            const headings = entry.target.querySelectorAll('.heading-rotation')
+            headings.forEach((heading, index) => {
+              setTimeout(() => {
+                heading.classList.add('animate')
+              }, index * 200)
+            })
+            missionObserver.disconnect()
+          }
+        })
+      }, { threshold: 0.3 })
+      missionObserver.observe(missionSection)
+    }
+
+    // Setup dropdown/accordion functionality
+    const accordionItems = document.querySelectorAll('.accordion-item')
+    accordionItems.forEach((item) => {
+      const toggle = item.querySelector('.accordion-toggle')
+      toggle?.addEventListener('click', () => {
+        // Close other accordions
+        accordionItems.forEach((otherItem) => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('w--open')
+          }
+        })
+        // Toggle current accordion
+        item.classList.toggle('w--open')
+      })
+    })
+
+    // Setup dropdown menu functionality
+    const dropdowns = document.querySelectorAll('.w-dropdown')
+    dropdowns.forEach((dropdown) => {
+      const toggle = dropdown.querySelector('.w-dropdown-toggle')
+      toggle?.addEventListener('click', (e) => {
+        e.preventDefault()
+        dropdown.classList.toggle('w--open')
+      })
+    })
+
+    // Setup portfolio tabs
+    const tabLinks = document.querySelectorAll('.portfolio-tab-link')
+    const tabPanes = document.querySelectorAll('.portfolio-tab-pane')
+    
+    tabLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault()
+        const tabId = link.getAttribute('data-w-tab')
+        
+        // Update active states
+        tabLinks.forEach((l) => l.classList.remove('w--current'))
+        link.classList.add('w--current')
+        
+        tabPanes.forEach((pane) => {
+          if (pane.getAttribute('data-w-tab') === tabId) {
+            pane.classList.add('w--tab-active')
+          } else {
+            pane.classList.remove('w--tab-active')
+          }
+        })
+      })
+    })
+
+    return () => {
+      animateOnScroll.disconnect()
+    }
   }, [])
 
   return (
