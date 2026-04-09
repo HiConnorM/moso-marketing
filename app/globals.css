@@ -12,7 +12,7 @@ html {
 
 .navbar-logo-link.w--current,
 .navbar-logo-link {
-  margin-right: 0 !important;
+  margin-right: 24px !important;
 }
 
 /* Prevent navbar button from overflowing */
