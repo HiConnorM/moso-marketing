@@ -2,3 +2,20 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Fix navbar logo sizing and overflow */
+.navbar-logo-desktop .image-2 {
+  width: auto !important;
+  height: 28px;
+  max-height: 28px;
+}
+
+.navbar-logo-link.w--current,
+.navbar-logo-link {
+  margin-right: 0 !important;
+}
+
+/* Prevent navbar button from overflowing */
+.navbar-button-wrapper {
+  flex-shrink: 0;
+}
