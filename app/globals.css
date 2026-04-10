@@ -6,8 +6,12 @@ html {
 /* Fix navbar logo sizing and overflow */
 .navbar-logo-desktop .image-2 {
   width: auto !important;
-  height: 28px;
-  max-height: 28px;
+  height: 38px;
+  max-height: 38px;
+}
+
+.navbar-logo-desktop {
+  margin-left: -8px;
 }
 
 .navbar-logo-link.w--current,
@@ -18,4 +22,779 @@ html {
 /* Prevent navbar button from overflowing */
 .navbar-button-wrapper {
   flex-shrink: 0;
+}
+
+/* ============================================================
+   PORTFOLIO HERO BACKGROUND
+   ============================================================ */
+
+.moso-portfolio-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.45);
+  transform: scale(1.03);
+  transition: transform 8s ease;
+}
+
+.hero-image-inner:hover .moso-portfolio-hero-bg {
+  transform: scale(1.0);
+}
+
+/* ============================================================
+   HERO TITLE LINE (used by portfolio, blog, and detail pages)
+   ============================================================ */
+
+.moso-hero-title-line {
+  display: block;
+  will-change: transform, opacity;
+}
+
+/* ============================================================
+   PORTFOLIO CONTROLS (tabs + filters)
+   ============================================================ */
+
+.moso-portfolio-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color--border-mutted, #d4d6d8);
+}
+
+.moso-portfolio-tabs {
+  display: flex;
+  gap: 0.25rem;
+  background: #f2f2f2;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.moso-tab-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 18px;
+  border-radius: 6px;
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color--secondary, #737577);
+  transition: background 0.2s, color 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.moso-tab-btn.active {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+.moso-portfolio-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.moso-filter-btn {
+  background: none;
+  border: 1px solid var(--color--border-mutted, #d4d6d8);
+  border-radius: 100px;
+  padding: 5px 16px;
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color--secondary, #737577);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.moso-filter-btn.active,
+.moso-filter-btn:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+/* ============================================================
+   PROJECT GRID (Arpeggio-inspired: 2-col, full-bleed images)
+   ============================================================ */
+
+.moso-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .moso-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* ============================================================
+   PROJECT CARD (grid layout)
+   ============================================================ */
+
+.moso-project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.moso-project-card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: var(--_apps---sizes--radius, 5px);
+  background: #111;
+}
+
+.moso-project-card-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform, filter;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.moso-project-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+}
+
+.moso-project-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.moso-project-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.moso-project-card-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.moso-project-card-title {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.moso-project-card-arrow {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.moso-project-card:hover .moso-project-card-arrow {
+  background: #fff;
+  border-color: #fff;
+}
+
+.moso-project-card:hover .moso-project-card-arrow img {
+  filter: invert(1);
+}
+
+.moso-project-card-arrow img {
+  width: 14px;
+  height: 14px;
+  filter: invert(0) brightness(10);
+}
+
+.moso-project-card-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.25);
+  margin: 0.3rem 0;
+}
+
+.moso-project-card-client {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+}
+
+.moso-project-card-category {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.moso-project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+/* ============================================================
+   PROJECT LIST (list layout)
+   ============================================================ */
+
+.moso-projects-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+.moso-project-list-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.moso-project-list-divider {
+  height: 1px;
+  background: var(--color--border-mutted, #d4d6d8);
+}
+
+.moso-project-list-inner {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  transition: padding-left 0.3s ease;
+}
+
+.moso-project-list-item:hover .moso-project-list-inner {
+  padding-left: 1rem;
+}
+
+.moso-project-list-title h4 {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+}
+
+.moso-project-list-meta span {
+  font-size: 0.85rem;
+  color: var(--color--secondary, #737577);
+  font-weight: 500;
+}
+
+.moso-project-list-year {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color--secondary, #737577);
+}
+
+.moso-project-list-arrow {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color--border-mutted, #d4d6d8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.moso-project-list-item:hover .moso-project-list-arrow {
+  background: #000;
+  border-color: #000;
+}
+
+.moso-project-list-item:hover .moso-project-list-arrow img {
+  filter: invert(1);
+}
+
+.moso-project-list-arrow img {
+  width: 14px;
+  height: 14px;
+}
+
+@media (max-width: 640px) {
+  .moso-project-list-inner {
+    grid-template-columns: 1fr auto;
+  }
+  .moso-project-list-meta {
+    display: none;
+  }
+}
+
+/* ============================================================
+   SHARED TAG PILL
+   ============================================================ */
+
+.moso-project-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--color--border-mutted, #d4d6d8);
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color--secondary, #737577);
+  letter-spacing: 0.03em;
+}
+
+/* ============================================================
+   BLOG GRID
+   ============================================================ */
+
+.moso-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0 4rem;
+}
+
+@media (max-width: 1024px) {
+  .moso-blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .moso-blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   BLOG CARD
+   ============================================================ */
+
+.moso-blog-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  border-radius: var(--_apps---sizes--radius, 5px);
+  overflow: hidden;
+  border: 1px solid var(--color--border-mutted, #d4d6d8);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  will-change: transform, opacity;
+}
+
+.moso-blog-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+
+.moso-blog-card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #111;
+}
+
+.moso-blog-card-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  transition: transform 0.5s ease;
+}
+
+.moso-blog-card-fader {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  transition: background 0.3s;
+}
+
+.moso-blog-card:hover .moso-blog-card-fader {
+  background: rgba(0,0,0,0.05);
+}
+
+.moso-blog-card-content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+  background: #fff;
+}
+
+.moso-blog-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.moso-blog-card-category {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: #f2f2f2;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.moso-blog-card-date {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.75rem;
+  color: var(--color--secondary, #737577);
+}
+
+.moso-blog-card-title {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: #000;
+  margin: 0;
+}
+
+.moso-blog-card-excerpt {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color--secondary, #737577);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================================
+   BLOG DETAIL PAGE
+   ============================================================ */
+
+.moso-blog-detail-title {
+  font-size: clamp(2rem, 5vw, 4rem) !important;
+}
+
+.moso-blog-featured-image-section {
+  padding: 2rem 0 3rem;
+}
+
+.moso-blog-featured-image {
+  width: 100%;
+  aspect-ratio: 16/7;
+  overflow: hidden;
+  border-radius: var(--_apps---sizes--radius, 5px);
+}
+
+.moso-blog-featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.moso-blog-article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.moso-blog-article p {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #222;
+  margin-bottom: 1.5rem;
+}
+
+.moso-blog-article h3 {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000;
+  margin: 2rem 0 0.75rem;
+}
+
+.moso-blog-article strong {
+  font-weight: 600;
+  color: #000;
+}
+
+.moso-blog-article em {
+  font-style: italic;
+  color: var(--color--secondary, #737577);
+}
+
+/* ============================================================
+   PROJECT DETAIL PAGE
+   ============================================================ */
+
+.moso-detail-section {
+  margin-bottom: 3rem;
+  will-change: transform, opacity;
+}
+
+.moso-detail-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .moso-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.moso-detail-label .caption {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color--secondary, #737577);
+  font-weight: 600;
+  padding-top: 0.25rem;
+}
+
+.moso-detail-body .paragraph-large {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.moso-detail-info-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 1.5rem 0;
+}
+
+.moso-detail-info-item {
+  flex: 1;
+  min-width: 160px;
+  padding: 1rem 1.5rem 1rem 0;
+  border-right: 1px solid var(--color--border-mutted, #d4d6d8);
+}
+
+.moso-detail-info-item:last-child {
+  border-right: none;
+}
+
+@media (max-width: 640px) {
+  .moso-detail-info-item {
+    border-right: none;
+    border-bottom: 1px solid var(--color--border-mutted, #d4d6d8);
+    padding: 0.75rem 0;
+  }
+}
+
+.moso-detail-info-label {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color--secondary, #737577);
+  margin-bottom: 0.35rem;
+}
+
+.moso-detail-info-value {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #000;
+}
+
+a.moso-detail-info-value.moso-link {
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+  padding-bottom: 1px;
+}
+
+/* Gallery */
+.moso-detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.moso-detail-gallery-item {
+  overflow: hidden;
+  border-radius: var(--_apps---sizes--radius, 5px);
+  aspect-ratio: 4/3;
+}
+
+.moso-detail-gallery-item:first-child {
+  grid-column: 1 / -1;
+  aspect-ratio: 16/7;
+}
+
+.moso-detail-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.moso-detail-gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 640px) {
+  .moso-detail-gallery {
+    grid-template-columns: 1fr;
+  }
+  .moso-detail-gallery-item:first-child {
+    grid-column: 1;
+  }
+}
+
+/* Results */
+.moso-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.moso-result-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color--border-mutted, #d4d6d8);
+}
+
+.moso-result-item:first-child {
+  border-top: 1px solid var(--color--border-mutted, #d4d6d8);
+}
+
+.moso-result-number {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color--secondary, #737577);
+  flex-shrink: 0;
+  width: 28px;
+}
+
+.moso-result-item .paragraph-large {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Detail tags */
+.moso-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1.5rem 0;
+}
+
+/* Next project / next post navigation */
+.moso-next-project {
+  padding-top: 1rem;
+}
+
+.moso-next-project-link {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  text-decoration: none;
+  color: inherit;
+  padding: 2rem 0;
+  transition: gap 0.3s ease;
+}
+
+.moso-next-project-link:hover {
+  gap: 3rem;
+}
+
+.moso-next-project-label {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color--secondary, #737577);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.moso-next-project-title {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+  flex: 1;
+}
+
+.moso-next-project-arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color--border-mutted, #d4d6d8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.moso-next-project-link:hover .moso-next-project-arrow {
+  background: #000;
+  border-color: #000;
+}
+
+.moso-next-project-link:hover .moso-next-project-arrow img {
+  filter: invert(1);
+}
+
+.moso-next-project-arrow img {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 640px) {
+  .moso-next-project-link {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .moso-next-project-title {
+    font-size: 1.2rem;
+  }
 }
