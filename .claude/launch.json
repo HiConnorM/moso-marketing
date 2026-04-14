@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "nextjs-dev",
-      "runtimeExecutable": "/bin/bash",
-      "runtimeArgs": ["-c", "export PATH=/Users/hiconnor/.nvm/versions/node/v20.20.2/bin:$PATH && npx next dev --turbopack"],
+      "runtimeExecutable": "/Users/hiconnor/.nvm/versions/node/v20.20.2/bin/node",
+      "runtimeArgs": ["-e", "process.chdir('/Users/hiconnor/Desktop/MOSO WEB/moso-marketing'); process.argv=['node','next','dev','--turbopack']; require('/Users/hiconnor/Desktop/MOSO WEB/moso-marketing/node_modules/next/dist/bin/next');"],
       "port": 3000
     }
   ]
