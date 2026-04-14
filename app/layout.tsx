@@ -21,6 +21,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="preconnect" href="https://d3e54v103j8qbb.cloudfront.net" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://d3e54v103j8qbb.cloudfront.net" />
+        <link rel="preload" href="/css/moso-test-2-4b0411.webflow.css" as="style" />
         <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
         <link href="/css/webflow.css" rel="stylesheet" type="text/css" />
         <link

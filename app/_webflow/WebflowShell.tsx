@@ -48,13 +48,13 @@ function extractShell(htmlFile: string) {
   const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i)
   const body = bodyMatch?.[1] ?? ""
 
-  // Extract navbar (from <nav class="navbar"> to closing </nav>)
-  const navMatch = body.match(/<nav class="navbar">[\s\S]*?<\/nav>/)
-  let navbar = navMatch?.[0] ?? ""
-
-  // Extract the offcanvas/sidebar that comes before navbar
-  const offcanvasMatch = body.match(/<div class="offcanvas">[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/)
-  const offcanvas = offcanvasMatch?.[0] ?? ""
+  // Extract navbar: everything from <nav class="navbar"> up to where content starts
+  const contentBoundary = '<div class="div-block-4">'
+  const navStart = body.indexOf('<nav class="navbar">')
+  const contentIdx = body.indexOf(contentBoundary)
+  const navbar = navStart >= 0 && contentIdx > navStart
+    ? body.slice(navStart, contentIdx).trim()
+    : ""
 
   // Extract footer section
   const footerMatch = body.match(/<section class="footer">[\s\S]*?<\/section>/)
@@ -64,8 +64,7 @@ function extractShell(htmlFile: string) {
   const ctaMatch = body.match(/<section class="section">\s*<div class="margin-bottom-large">[\s\S]*?<\/section>/)
   const ctaSection = ctaMatch?.[0] ?? ""
 
-  // Prepend offcanvas to navbar
-  const fullNavbar = offcanvas + "\n" + navbar
+  const fullNavbar = navbar
 
   const result = {
     navbar: rewritePaths(fullNavbar),
