@@ -22,18 +22,36 @@ export function ProjectCard({ project, index, layout }: ProjectCardProps) {
     if (!card) return
 
     gsap.set(card, { opacity: 0, y: 60 })
-    const tl = gsap.to(card, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      delay: layout === "grid" ? (index % 2) * 0.15 : 0,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: card,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
-    })
+
+    // If card is already in the viewport (e.g. after a layout switch), animate immediately.
+    // Otherwise use ScrollTrigger so it animates as the user scrolls down.
+    const rect = card.getBoundingClientRect()
+    const inView = rect.top < window.innerHeight && rect.bottom > 0
+
+    let tl: gsap.core.Tween
+
+    if (inView) {
+      tl = gsap.to(card, {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        delay: index * 0.04,
+        ease: "power3.out",
+      })
+    } else {
+      tl = gsap.to(card, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: layout === "grid" ? (index % 2) * 0.15 : 0,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      })
+    }
 
     return () => {
       tl.kill()

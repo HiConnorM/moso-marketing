@@ -4,7 +4,7 @@
     {
       "name": "nextjs-dev",
       "runtimeExecutable": "/Users/hiconnor/.nvm/versions/node/v20.20.2/bin/node",
-      "runtimeArgs": ["-e", "process.chdir('/Users/hiconnor/Desktop/MOSO WEB/moso-marketing'); process.argv=['node','next','dev','--turbopack']; require('/Users/hiconnor/Desktop/MOSO WEB/moso-marketing/node_modules/next/dist/bin/next');"],
+      "runtimeArgs": ["-e", "process.chdir('/Users/hiconnor/Desktop/MOSO WEB/moso-marketing'); process.argv=['node','next','dev']; require('/Users/hiconnor/Desktop/MOSO WEB/moso-marketing/node_modules/next/dist/bin/next');"],
       "port": 3000,
       "autoPort": true
     }
