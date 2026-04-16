@@ -30,7 +30,8 @@ function getUrgency(temp: 'hot' | 'warm' | 'cold'): string {
 
 async function findContactByEmail(email: string): Promise<string | null> {
   try {
-    const contacts = getContactsTable()
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const contacts = getContactsTable() as any
     const records = await contacts
       .select({
         filterByFormula: `{Email Address} = "${email.replace(/"/g, '\\"')}"`,
@@ -64,9 +65,12 @@ export async function upsertAirtableLead(
 
     let contactId: string
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const contactsAny = contacts as any
+
     if (existingId) {
       // Update existing contact with audit data
-      await contacts.update(existingId, {
+      await contactsAny.update(existingId, {
         'Website URL': lead.website_url,
         'Last Interaction Date': new Date().toISOString().split('T')[0],
         'Audit Score': score,
@@ -78,7 +82,7 @@ export async function upsertAirtableLead(
       logger.info('Airtable contact updated', { contactId, email: lead.email })
     } else {
       // Create new contact
-      const created = await contacts.create({
+      const created = await contactsAny.create({
         'First Name': first,
         'Last Name': last,
         'Email Address': lead.email,
@@ -97,7 +101,8 @@ export async function upsertAirtableLead(
     }
 
     // 2. Create a Signal linked to the contact
-    await signals.create({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    await (signals as any).create({
       'Contact': [{ id: contactId }],
       'Action Taken': 'Free Audit Submitted',
       'Knows MOSO?': 'No',

@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
     .eq('id', leadId)
 
   try {
-    const url = lead.website_url as string
+    const url = lead.website_url
     const origin = getOrigin(url)
 
     logger.info('Starting audit', { leadId, url })
@@ -102,18 +102,20 @@ export async function POST(req: NextRequest) {
     const htmlReport = renderHtmlReport(
       rawResults,
       aiReport,
-      lead.name as string | null,
-      lead.business_name as string | null
+      lead.name,
+      lead.business_name
     )
 
     // Save audit record
-    const { data: audit, error: auditError } = await supabase
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const supabaseAny = supabase as any
+    const { data: audit, error: auditError } = await supabaseAny
       .from('site_audits')
       .insert({
         lead_id: leadId,
         website_url: url,
-        raw_results: rawResults,
-        ai_report: aiReport,
+        raw_results: rawResults as unknown,
+        ai_report: aiReport as unknown,
         html_report: htmlReport,
         completed_at: new Date().toISOString(),
       })
@@ -136,16 +138,16 @@ export async function POST(req: NextRequest) {
 
     // Send email report
     await sendAuditReport({
-      to: lead.email as string,
-      name: lead.name as string | null,
-      businessName: lead.business_name as string | null,
+      to: lead.email,
+      name: lead.name,
+      businessName: lead.business_name,
       websiteUrl: url,
       htmlReport,
     })
 
     // Push to Airtable — creates/updates Contact and creates Signal
     await upsertAirtableLead(
-      { ...lead, status: 'completed', score: overallScore } as Parameters<typeof upsertAirtableLead>[0],
+      { ...lead, status: 'completed', score: overallScore },
       aiReport
     )
 
