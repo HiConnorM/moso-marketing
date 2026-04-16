@@ -25,6 +25,41 @@ html {
 }
 
 /* ============================================================
+   FOOTER CIRCLE — spinning text ring fix
+   The background div (position:absolute) was painting over the
+   in-flow text SVG. Lift the SVG out of flow and add rotation.
+   ============================================================ */
+.footer-circle-link {
+  position: relative;
+}
+
+/* The first direct .footer-circle-image child is the spinning text SVG */
+.footer-circle-link > .footer-circle-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  animation: footer-circle-spin 10s linear infinite;
+  pointer-events: none;
+}
+
+/* Background sits below text ring */
+.footer-circle-backgound {
+  z-index: 1;
+}
+
+/* Center icon sits above text ring */
+.footer-circle-icon-wrapper {
+  z-index: 3;
+}
+
+@keyframes footer-circle-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ============================================================
    PORTFOLIO HERO BACKGROUND
    ============================================================ */
 
@@ -798,3 +833,595 @@ a.moso-detail-info-value.moso-link {
     font-size: 1.2rem;
   }
 }
+
+/* ============================================================
+   AUDIT TOOL — FREE AUDIT PAGE
+   ============================================================ */
+
+.audit-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Hero */
+.audit-hero {
+  background: #000;
+  padding: 120px 0 100px;
+  overflow: hidden;
+}
+
+.audit-hero--success {
+  padding: 80px 0 64px;
+  background: #000;
+}
+
+.audit-hero-content {
+  max-width: 900px;
+}
+
+.audit-eyebrow {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #737577;
+  margin-bottom: 24px;
+}
+
+.audit-hero-headline {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: clamp(3rem, 6.5vw, 6rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 32px;
+}
+
+.audit-hero-subhead {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #9ca3af;
+  margin: 0 0 28px;
+  max-width: 600px;
+}
+
+.audit-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.audit-badge {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #d1d5db;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 100px;
+  padding: 5px 14px;
+}
+
+/* Body: form + features */
+.audit-body {
+  padding: 64px 0 80px;
+  background: #fff;
+}
+
+.audit-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .audit-body-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.audit-section-title {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #737577;
+  margin: 0 0 28px;
+}
+
+/* Form */
+.audit-form-wrapper {
+  position: sticky;
+  top: 100px;
+}
+
+.audit-form-container {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.audit-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .audit-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.audit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.audit-field--full {
+  grid-column: 1 / -1;
+}
+
+.audit-label {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.audit-label-hint {
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.audit-required {
+  color: #dc2626;
+}
+
+.audit-input {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.9rem;
+  color: #111;
+  background: #fff;
+  border: 1px solid #d4d6d8;
+  border-radius: 6px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.audit-input:focus {
+  border-color: #000;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+
+.audit-input::placeholder {
+  color: #a5a7a9;
+}
+
+.audit-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.audit-error {
+  margin-top: 12px;
+  background: #ffc5c5;
+  color: #751515;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+}
+
+.audit-form-footer {
+  margin-top: 20px;
+}
+
+.audit-submit-btn {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 24px;
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.audit-submit-btn:hover:not(:disabled) {
+  background: #1a1a1a;
+}
+
+.audit-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.audit-btn-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.audit-consent {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin: 10px 0 0;
+  line-height: 1.5;
+}
+
+/* Features list */
+.audit-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.audit-feature-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.audit-feature-item:first-child {
+  border-top: 1px solid #e5e7eb;
+}
+
+.audit-feature-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.audit-feature-label {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 2px;
+}
+
+.audit-feature-desc {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.82rem;
+  color: #737577;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Trust strip */
+.audit-trust {
+  background: #f3f4f5;
+  padding: 32px 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.audit-trust-copy {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.85rem;
+  color: #737577;
+  margin: 0;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Status / Success page */
+.audit-success-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.audit-success-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.audit-success-icon {
+  width: 48px;
+  height: 48px;
+  background: #16a34a;
+  color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.audit-success-title {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin: 0 0 12px;
+}
+
+.audit-success-subhead {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 1rem;
+  color: #9ca3af;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Status card */
+.audit-status-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 16px;
+}
+
+.audit-status--failed {
+  border-color: #fca5a5;
+  background: #fff5f5;
+}
+
+.audit-status--timeout {
+  border-color: #fcd34d;
+  background: #fffdf0;
+}
+
+.audit-status-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  color: #737577;
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.9rem;
+}
+
+/* Spinner */
+.audit-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0,0,0,0.15);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: audit-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+.audit-spinner--small {
+  width: 10px;
+  height: 10px;
+}
+
+.audit-spinner--large {
+  width: 32px;
+  height: 32px;
+  border-width: 3px;
+}
+
+@keyframes audit-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Steps */
+.audit-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.audit-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0.35;
+}
+
+.audit-step--active {
+  opacity: 1;
+}
+
+.audit-step-dot {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #d4d6d8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  color: #16a34a;
+  background: #fff;
+}
+
+.audit-step--active .audit-step-dot {
+  border-color: #000;
+}
+
+.audit-step--current .audit-step-dot {
+  border-color: #000;
+}
+
+.audit-step-label {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Score reveal */
+.audit-status-score {
+  text-align: center;
+  padding: 24px 0 16px;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 16px;
+}
+
+.audit-status-score-label {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #737577;
+  margin: 0 0 4px;
+}
+
+.audit-status-score-value {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 5rem;
+  font-weight: 800;
+  color: #000;
+  line-height: 1;
+  margin: 0;
+}
+
+.audit-status-score-value span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.audit-status-score-hint {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.85rem;
+  color: #737577;
+  margin: 8px 0 0;
+}
+
+.audit-status-cta {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.audit-status-cta p {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.9rem;
+  color: #374151;
+  margin: 0 0 10px;
+}
+
+.audit-cta-link {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+  padding-bottom: 1px;
+}
+
+.audit-status-failed p,
+.audit-status-title {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 8px;
+}
+
+.audit-status-body {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.9rem;
+  color: #374151;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.audit-status-body a {
+  color: #000;
+}
+
+.audit-success-email-note {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.audit-success-email-note p {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.82rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.audit-loading-placeholder {
+  height: 200px;
+}
+
+/* What happens next section */
+.audit-next {
+  padding: 64px 0 80px;
+  background: #fff;
+}
+
+.audit-next-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin: 24px 0 40px;
+}
+
+@media (max-width: 768px) {
+  .audit-next-steps {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.audit-next-step {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.audit-next-num {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+}
+
+.audit-next-step p {
+  font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #374151;
+  margin: 0;
+}
+
+.audit-next-cta {
+  display: flex;
+}
+

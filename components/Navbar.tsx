@@ -22,12 +22,12 @@ export default function Navbar({ currentPage }: NavbarProps) {
           <div className="navbar-container">
             <div className="navbar-logo-desktop">
               <a href="/" className="navbar-logo-link w-nav-brand">
-                <img loading="lazy" height={200} alt="MOSO Logo" src="/images/OSO.svg" className="image-2" />
+                <img loading="lazy" height={200} alt="MOSO Logo" src="/images/moso-logo-color.svg" className="image-2" />
               </a>
             </div>
             <div className="navbar-logo-mobile">
               <a href="/" className="navbar-logo-link w-nav-brand">
-                <img loading="lazy" height="auto" alt="MOSO Logo" src="/images/OSO-4.png" className="image-2" />
+                <img loading="lazy" height="auto" alt="MOSO Logo" src="/images/moso-circle-white.svg" className="image-2" />
               </a>
             </div>
             <nav role="navigation" className="navbar-menu w-nav-menu">
@@ -43,6 +43,9 @@ export default function Navbar({ currentPage }: NavbarProps) {
                     <div className="dropdown-link-menu">
                       <a href="/blog" className={`dropdown-link w-inline-block ${currentPage === 'blog' ? 'w--current' : ''}`}>
                         <div className="dropdown-links">Blog</div>
+                      </a>
+                      <a href="/free-audit" className={`dropdown-link w-inline-block ${currentPage === 'free-audit' ? 'w--current' : ''}`}>
+                        <div className="dropdown-links">Free Website Audit</div>
                       </a>
                       <a href="#" className="dropdown-link w-inline-block">
                         <div className="dropdown-links">Learning Hub</div>
