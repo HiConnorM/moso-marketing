@@ -25,32 +25,54 @@ html {
 }
 
 /* ============================================================
-   FOOTER CIRCLE — spinning text ring fix
-   The background div (position:absolute) was painting over the
-   in-flow text SVG. Lift the SVG out of flow and add rotation.
+   FOOTER CIRCLE — spinning text ring
+   Uses an inline SVG with textPath for reliable white circular
+   text. The .footer-circle-spinning-text SVG spins via CSS.
    ============================================================ */
+
+/* Ensure stacking context on the link */
 .footer-circle-link {
-  position: relative;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-/* The first direct .footer-circle-image child is the spinning text SVG */
-.footer-circle-link > .footer-circle-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+/* Spinning SVG text ring (React Footer.tsx) — absolute, fills the entire circle */
+.footer-circle-spinning-text {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
   z-index: 2;
-  animation: footer-circle-spin 10s linear infinite;
+  animation: footer-circle-spin 12s linear infinite;
   pointer-events: none;
+  display: block;
 }
 
-/* Background sits below text ring */
+/* Spinning text SVG img (Webflow HTML export pages) — direct child only */
+.footer-circle-link > img.footer-circle-image {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 2;
+  animation: footer-circle-spin 12s linear infinite;
+  pointer-events: none;
+  display: block;
+}
+
+/* Dark background circle sits behind text */
 .footer-circle-backgound {
+  position: absolute !important;
+  inset: 0 !important;
   z-index: 1;
+  border-radius: 100%;
 }
 
-/* Center icon sits above text ring */
+/* Center MOSO logo sits above text ring */
 .footer-circle-icon-wrapper {
+  position: relative !important;
   z-index: 3;
 }
 
@@ -872,9 +894,9 @@ a.moso-detail-info-value.moso-link {
 
 .audit-hero-headline {
   font-family: var(--font-family--font-primary, "Overused-Grotesk", Arial, sans-serif);
-  font-size: clamp(3rem, 6.5vw, 6rem);
+  font-size: clamp(3.5rem, 9vw, 8.5rem);
   font-weight: 700;
-  line-height: 0.95;
+  line-height: 0.92;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: #fff;

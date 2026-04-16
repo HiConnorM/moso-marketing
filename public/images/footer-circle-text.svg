@@ -1,1 +1,8 @@
-Non-image binary files cannot be read directly. It is available at the following URL: https://v0chat-agent-data-prod.s3.us-east-1.amazonaws.com/vm-binary/TDpKX8E1WAb/807ed4df6b89b55a59f9deee8e4520721d2d0edfb80aea9fe22bbb43fa2d1176.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA52KF4VHQDTZ5RDMT%2F20260331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260331T063759Z&X-Amz-Expires=3600&X-Amz-Signature=2ff64f539a60c76890a06d4d72d7bcec72775df27cbaa05adedf50babd3acda3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <path id="textCircle" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"/>
+  </defs>
+  <text fill="#ffffff" font-size="10.5" font-family="Arial, Helvetica, sans-serif" font-weight="600" letter-spacing="3.5">
+    <textPath href="#textCircle">LET'S TALK ✦ LET'S TALK ✦ LET'S TALK ✦ LET'S TALK ✦ </textPath>
+  </text>
+</svg>

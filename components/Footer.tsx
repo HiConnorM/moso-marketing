@@ -7,7 +7,8 @@ export default function Footer() {
         <div className="footer-row-top">
           <div className="w-layout-blockcontainer container-fluid w-container">
             <div className="w-layout-grid grid-12-columns-small">
-              <div className="footer-widget">
+              {/* Col 1–3: CTA */}
+              <div className="footer-widget" style={{ gridColumn: "span 3 / span 3" }}>
                 <div className="margin-bottom-extra-small">
                   <div>Have a project in mind?</div>
                 </div>
@@ -22,9 +23,10 @@ export default function Footer() {
                   </div>
                 </a>
               </div>
-              <div>
+              {/* Col 4–9: Social links */}
+              <div style={{ gridColumn: "span 6 / span 6" }}>
                 <div className="w-layout-grid grid-12-columns-zero">
-                  <div className="footer-widget">
+                  <div className="footer-widget" style={{ gridColumn: "span 6 / span 6" }}>
                     <div className="footer-links-wrapper">
                       <a href="#" target="_blank" className="footer-link w-inline-block">
                         <div className="footer-link-inner">
@@ -40,7 +42,7 @@ export default function Footer() {
                       </a>
                     </div>
                   </div>
-                  <div className="footer-widget">
+                  <div className="footer-widget" style={{ gridColumn: "span 6 / span 6" }}>
                     <div className="footer-links-wrapper">
                       <a href="#" target="_blank" className="footer-link w-inline-block">
                         <div className="footer-link-inner">
@@ -58,7 +60,8 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-              <div className="footer-widget align-right">
+              {/* Col 10–12: Back to top */}
+              <div className="footer-widget align-right" style={{ gridColumn: "span 3 / span 3" }}>
                 <a href="#top" className="back-top-link w-inline-block">
                   <div className="back-top-icon">
                     <div className="back-top-icon-inner">
@@ -97,16 +100,42 @@ export default function Footer() {
           </div>
           <div className="footer-circle-wrapper">
             <a href="/contact" className="footer-circle-link w-inline-block">
+              {/* Dark background circle */}
               <div className="footer-circle-backgound">
                 <div className="footer-circle-border"></div>
               </div>
-              <img src="/images/footer-circle-text.svg" loading="lazy" alt="Let's talk!" className="footer-circle-image" />
+              {/* Spinning white circular text — inline SVG for reliable rendering */}
+              <svg
+                className="footer-circle-spinning-text"
+                viewBox="0 0 200 200"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <defs>
+                  <path
+                    id="fc-text-path"
+                    d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"
+                  />
+                </defs>
+                <text
+                  fill="#ffffff"
+                  fontSize="10.5"
+                  fontFamily="Arial, Helvetica, sans-serif"
+                  fontWeight="600"
+                  letterSpacing="3.5"
+                >
+                  <textPath href="#fc-text-path">
+                    {"LET'S TALK ✦ LET'S TALK ✦ LET'S TALK ✦ LET'S TALK ✦ "}
+                  </textPath>
+                </text>
+              </svg>
+              {/* Center MOSO logo */}
               <div className="footer-circle-icon-wrapper">
                 <div className="footer-circle-icon-front">
-                  <img src="/images/OSO-4.png" loading="lazy" alt="" className="footer-circle-image" />
+                  <img src="/images/moso-circle-white.svg" loading="lazy" alt="MOSO" />
                 </div>
                 <div className="footer-circle-icon-back">
-                  <img src="/images/OSO-4.png" loading="lazy" alt="" className="footer-circle-image" />
+                  <img src="/images/moso-circle-white.svg" loading="lazy" alt="" />
                 </div>
               </div>
             </a>
