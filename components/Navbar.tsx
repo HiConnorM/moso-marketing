@@ -34,6 +34,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
               <div className="navbar-menu-left">
                 <a href="/portfolio" className={`navbar-link w-nav-link ${currentPage === 'portfolio' ? 'w--current' : ''}`}>Portfolio</a>
                 <a href="/services" className={`navbar-link w-nav-link ${currentPage === 'services' ? 'w--current' : ''}`}>Services</a>
+                <a href="/about" className={`navbar-link w-nav-link ${currentPage === 'about' ? 'w--current' : ''}`}>About</a>
                 <div data-delay="300" data-hover="false" className="menu-dropdown w-dropdown">
                   <div className="dropdown-toggle w-dropdown-toggle">
                     <div className="w-icon-dropdown-toggle"></div>

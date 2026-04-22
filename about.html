@@ -21,34 +21,6 @@
   <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
   <style>
-  <canvas id="liquid"></canvas>
-<script>
-  const canvas = document.getElementById("liquid");
-  const ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = 100; // Height of navbar
-  const points = [];
-  const pointCount = 20;
-  const spacing = canvas.width / (pointCount - 1);
-  for (let i = 0; i < pointCount; i++) {
-    points.push({ x: i * spacing, y: 50, vy: 0 });
-  }
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
-    ctx.beginPath();
-    ctx.moveTo(0, 100);
-    ctx.lineTo(points[0].x, points[0].y);
-    for (let i = 1; i < points.length; i++) {
-      ctx.lineTo(points[i].x, points[i].y);
-    }
-    ctx.lineTo(canvas.width, 100);
-    ctx.closePath();
-    ctx.fill();
-    requestAnimationFrame(animate);
-  }
-  animate();
-</script>
 body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -207,6 +179,7 @@ body{
             <div class="navbar-menu-left">
               <a href="portfolio.html" class="navbar-link w-nav-link">Portfolio</a>
               <a href="services.html" class="navbar-link w-nav-link">Services</a>
+              <a href="about.html" aria-current="page" class="navbar-link w-nav-link w--current">About</a>
               <div data-delay="300" data-hover="false" data-w-id="4df39ded-9284-a4f9-05fd-857880f2dcce" class="menu-dropdown w-dropdown">
                 <div class="dropdown-toggle w-dropdown-toggle">
                   <div class="w-icon-dropdown-toggle"></div>
@@ -277,6 +250,8 @@ body{
         </div>
       </div>
     </nav>
+
+    <!-- HERO -->
     <section class="section-top">
       <div class="w-layout-blockcontainer container-fluid w-container">
         <div class="page-title-wrapper">
@@ -293,7 +268,7 @@ body{
               <div class="hero-caption">Based in Louisiana, USA</div>
             </div>
             <div id="w-node-_01f436ee-f339-34c5-43b4-7c5b6af37dd1-6a8475f1" class="hero-caption-second">
-              <div class="hero-caption">(©2021 <strong>—</strong> 2025)</div>
+              <div class="hero-caption">(©2021 <strong>—</strong> 2026)</div>
             </div>
             <div id="w-node-_01f436ee-f339-34c5-43b4-7c5b6af37dd4-6a8475f1" class="hero-caption-third">
               <div class="hero-caption-inner">
@@ -323,6 +298,8 @@ body{
         </div>
       </div>
     </section>
+
+    <!-- 01 — WHO WE ARE -->
     <section class="section">
       <div class="w-layout-blockcontainer container-fluid w-container">
         <div class="w-layout-grid grid-12-columns-small">
@@ -330,11 +307,13 @@ body{
             <div class="margin-bottom-medium">
               <div data-w-id="9da2251a-c24f-1790-d902-d6568d765c10" style="opacity:0" class="section-title-text">(01)</div>
             </div>
-            <p data-w-id="9da2251a-c24f-1790-d902-d6568d765c12" style="opacity:0" class="paragraph-extra-large">MOSO exists to help businesses intentionally shape what comes next. We combine brand thinking, design, development, and growth systems — so companies can stop duct-taping their future together and start building it with purpose.</p>
+            <p data-w-id="9da2251a-c24f-1790-d902-d6568d765c12" style="opacity:0" class="paragraph-extra-large">MOSO exists to help businesses intentionally shape what comes next. We combine brand thinking, design, development, and growth systems — because the brands that win aren't the loudest. They're the clearest. We don't just make things look better. We make them make more sense, work harder, and feel exactly right.</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- OFFICE IMAGES -->
     <section class="section">
       <div class="w-layout-blockcontainer container-fluid w-container">
         <div class="w-layout-grid grid-12-columns-fixed-gap">
@@ -351,6 +330,8 @@ body{
         </div>
       </div>
     </section>
+
+    <!-- 02 — OUR STORY -->
     <section class="section">
       <div class="w-layout-blockcontainer container w-container">
         <div class="w-layout-grid grid-12-columns">
@@ -369,11 +350,11 @@ body{
               </div>
               <div class="about-section-content-inner">
                 <div data-w-id="d07f532e-3dd2-2a0e-30f7-2d726216c36c" style="opacity:0" class="margin-bottom-medium">
-                  <h3 class="heading-small">Built for what<br>comes next</h3>
+                  <h3 class="heading-small">Born from a belief<br>that better is possible</h3>
                 </div>
                 <div data-w-id="d07f532e-3dd2-2a0e-30f7-2d726216c371" style="opacity:0" class="about-section-bottom">
                   <div class="margin-bottom-medium">
-                    <p class="paragraph-large">MOSO was built from the belief that businesses should not have to choose between good taste, strong strategy, and real execution. We are a design and technology studio that bridges creative direction with technical capability — helping brands define who they are, build what they need, and grow with clarity and intention. We do not just make things look better. We make them make more sense, work better, and feel aligned.</p>
+                    <p class="paragraph-large">MOSO was founded in New Orleans with a conviction: brands should not have to choose between good taste, strong strategy, and real execution. Too many businesses settle for one of the three. We built a studio that refuses that compromise — one that bridges creative vision with technical capability, and brand thinking with growth systems. We are not a vendor. We are a strategic partner for brands ready to build something that actually lasts.</p>
                   </div>
                   <div>
                     <a data-w-id="172db327-eb91-98ce-0506-aebff67826b4" href="services.html" class="button w-inline-block">
@@ -403,6 +384,8 @@ body{
         </div>
       </div>
     </section>
+
+    <!-- 03 — OUR MISSION -->
     <section class="section">
       <div class="w-layout-blockcontainer container w-container">
         <div class="w-layout-grid grid-12-columns">
@@ -466,11 +449,206 @@ body{
             </div>
           </div>
           <div id="w-node-_96821498-2a79-02f6-2665-c52d0eb6bea7-6a8475f1" data-w-id="96821498-2a79-02f6-2665-c52d0eb6bea7" style="opacity:0" class="mission-text">
-            <p class="paragraph-small">Our mission is to help businesses build a more beautiful, functional, strategic, and future-ready presence through design, technology, and thoughtful growth. We believe the future is not something businesses stumble into — it is something they design.</p>
+            <p class="paragraph-small">Our mission is to help businesses build a more beautiful, functional, strategic, and future-ready presence — through design, technology, and intentional growth. We believe the future is not something businesses stumble into. It is something they design. And we are here to help them build it on purpose.</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- 04 — OUR VISION -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="w-layout-grid grid-12-columns">
+          <div id="w-node-vision-title-6a8475f1" class="mission-title-wrapper">
+            <div class="section-title">
+              <h2 class="section-title-text">Our Vision</h2>
+              <div class="section-title-text">(04)</div>
+              <div class="divider-bottom">
+                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="divider"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="overflow-hidden">
+        <div class="w-layout-blockcontainer container-fluid w-container">
+          <div class="mission-heading-wrapper">
+            <div class="heading-rotation">
+              <div class="heading-rotation-front">
+                <h3 class="heading-large">Signal</h3>
+              </div>
+              <div aria-hidden="true" class="heading-rotation-back">
+                <div class="heading-large">Signal</div>
+              </div>
+            </div>
+            <div class="mission-heading-number">001</div>
+          </div>
+          <div class="align-right">
+            <div class="mission-heading-wrapper">
+              <div class="mission-heading-number left">002</div>
+              <div class="heading-rotation">
+                <div class="heading-rotation-front">
+                  <h3 class="heading-large">Over</h3>
+                </div>
+                <div aria-hidden="true" class="heading-rotation-back">
+                  <div class="heading-large">Over</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="align-center">
+            <div class="mission-heading-wrapper margin-left">
+              <div class="heading-rotation">
+                <div class="heading-rotation-front">
+                  <h3 class="heading-large">Noise</h3>
+                </div>
+                <div aria-hidden="true" class="heading-rotation-back">
+                  <div class="heading-large">Noise</div>
+                </div>
+              </div>
+              <div class="mission-heading-number">003</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="w-layout-grid grid-12-columns-small">
+          <div id="w-node-_96821498-2a79-02f6-2665-c52d0eb6bea3-6a8475f1" class="mission-image-wrapper">
+            <div class="mission-image">
+              <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="image-placeholder"></div><img src="images/about-fullwidth.jpg" loading="lazy" sizes="(max-width: 600px) 100vw, 600px" alt="A bold, forward-looking creative space." srcset="images/about-fullwidth-p-500.jpg 500w, images/about-fullwidth-p-800.jpg 800w, images/about-fullwidth.jpg 1280w" class="image-cover">
+            </div>
+          </div>
+          <div id="w-node-_96821498-2a79-02f6-2665-c52d0eb6bea7-6a8475f1" class="mission-text">
+            <p class="paragraph-small">The digital age has changed everything about how brands are discovered, how trust is earned, and how markets shift. Every scroll, every search, every signal shapes perception. In this environment, noise is free and clarity is rare — which means the brands that cut through are the ones that invest in design, intention, and systems that work. We envision a world where every ambitious business has access to the kind of creative and strategic infrastructure that used to be reserved for the biggest players. Where marketing isn't a gamble — it's a craft. Where your digital presence is not a cost, but a compounding asset. That is the future MOSO is building toward — one brand, one system, one intentional decision at a time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE BELIEVE -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container-fluid w-container">
+        <div class="section-title">
+          <h2 class="section-title-text">What We Believe</h2>
+          <div class="section-title-text">(04b)</div>
+          <div class="divider-bottom">
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="divider"></div>
+          </div>
+        </div>
+        <div class="services-items-wrapper">
+          <div class="service-item">
+            <div class="divider-top">
+              <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="divider"></div>
+            </div>
+            <div class="services-content">
+              <div class="margin-bottom-medium">
+                <div class="heading-rotation">
+                  <div class="heading-rotation-front">
+                    <h3 class="service-title">Clarity wins</h3>
+                  </div>
+                  <div aria-hidden="true" class="heading-rotation-back">
+                    <div class="service-title">Clarity wins</div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-layout-grid service-content-columns">
+                <div>
+                  <p class="service-text">In a world flooded with content, the clearest brand wins. Not the loudest. Not the most active. The one that knows exactly who it is, who it serves, and what it stands for — and communicates that without hesitation. We help brands find that clarity and build everything around it.</p>
+                </div>
+                <div class="div-block">
+                  <div class="service-tag">Brand Strategy</div>
+                  <div class="service-tag">Positioning</div>
+                  <div class="service-tag">Messaging</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="divider-top">
+              <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="divider"></div>
+            </div>
+            <div class="services-content">
+              <div class="margin-bottom-medium">
+                <div class="heading-rotation">
+                  <div class="heading-rotation-front">
+                    <h3 class="service-title">Design is infrastructure</h3>
+                  </div>
+                  <div aria-hidden="true" class="heading-rotation-back">
+                    <div class="service-title">Design is infrastructure</div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-layout-grid service-content-columns">
+                <div>
+                  <p class="service-text">Design is not decoration. It is the operating system of your brand. Every visual decision, every user flow, every touchpoint either builds or erodes trust. We treat design as load-bearing — something that holds your brand up, not something applied at the end.</p>
+                </div>
+                <div class="div-block">
+                  <div class="service-tag">Visual Identity</div>
+                  <div class="service-tag">UX Design</div>
+                  <div class="service-tag">Web Design</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="divider-top">
+              <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="divider"></div>
+            </div>
+            <div class="services-content">
+              <div class="margin-bottom-medium">
+                <div class="heading-rotation">
+                  <div class="heading-rotation-front">
+                    <h3 class="service-title">Systems create freedom</h3>
+                  </div>
+                  <div aria-hidden="true" class="heading-rotation-back">
+                    <div class="service-title">Systems create freedom</div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-layout-grid service-content-columns">
+                <div>
+                  <p class="service-text">The best marketing doesn't feel like marketing — it feels inevitable. That happens when your growth is built on systems, not sprints. Smart automation, compounding content, and scalable infrastructure give brands the freedom to grow without burning out. We design those systems from the ground up.</p>
+                </div>
+                <div class="div-block">
+                  <div class="service-tag">Automation</div>
+                  <div class="service-tag">Growth Systems</div>
+                  <div class="service-tag">Content Strategy</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="service-item last">
+            <div class="divider-top">
+              <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="divider"></div>
+            </div>
+            <div class="services-content">
+              <div class="margin-bottom-medium">
+                <div class="heading-rotation">
+                  <div class="heading-rotation-front">
+                    <h3 class="service-title">The future is designed</h3>
+                  </div>
+                  <div aria-hidden="true" class="heading-rotation-back">
+                    <div class="service-title">The future is designed</div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-layout-grid service-content-columns">
+                <div>
+                  <p class="service-text">The brands that will define the next decade are not stumbling into their position — they are building it intentionally, right now. The digital age rewards those who design their presence before the market forces them to. We exist to help ambitious brands get ahead of that curve, and stay there.</p>
+                </div>
+                <div class="div-block">
+                  <div class="service-tag">Strategy</div>
+                  <div class="service-tag">Digital Presence</div>
+                  <div class="service-tag">Long-term Growth</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 — OUR TEAM -->
     <section class="section">
       <div class="overflow-hidden">
         <div class="w-layout-blockcontainer container-fluid w-container">
@@ -484,12 +662,12 @@ body{
           <div class="margin-bottom-large">
             <div class="w-layout-grid grid-12-columns-small">
               <div id="w-node-bbee681c-3416-06f7-857e-50c787fbb252-6a8475f1">
-                <h3 class="heading-medium">Creative<br>People</h3>
+                <h3 class="heading-medium">The People<br>Behind the Work</h3>
               </div>
               <div id="w-node-bbee681c-3416-06f7-857e-50c787fbb255-6a8475f1" class="section-header-text-wrapper">
                 <div class="container-small">
                   <div class="margin-bottom-small">
-                    <p class="paragraph-small">The people behind MOSO are designers, developers, strategists, and systems thinkers — united by a belief that great work changes outcomes.</p>
+                    <p class="paragraph-small">The people behind MOSO are designers, developers, strategists, and systems thinkers — united by the belief that great creative work changes outcomes. We are a small, intentional team that moves fast without cutting corners, and cares deeply about every brand we touch.</p>
                   </div>
                   <a data-w-id="172db327-eb91-98ce-0506-aebff67826b4" href="contact.html" class="button w-inline-block">
                     <div class="button-container">
@@ -511,7 +689,7 @@ body{
           </div>
           <div class="w-layout-grid grid-3-columns">
             <div id="w-node-_4c6f7ad3-daa9-3af2-06e0-53a57601c144-6a8475f1" data-w-id="4c6f7ad3-daa9-3af2-06e0-53a57601c144">
-              <div class="team-image-wrapper"><img src="images/team-1.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.9921875px, 798px" srcset="images/team-1-p-500.jpg 500w, images/team-1.jpg 798w" alt="Portrait of Brian Herbert." class="team-image">
+              <div class="team-image-wrapper"><img src="images/team-1.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.9921875px, 798px" srcset="images/team-1-p-500.jpg 500w, images/team-1.jpg 798w" alt="Portrait of Connor Morgan." class="team-image">
                 <div class="team-links">
                   <a rel="noopener nofollow" href="https://linkedin.com/" target="_blank" class="team-link w-inline-block">
                     <div>LinkedIn</div>
@@ -522,10 +700,10 @@ body{
                 </div>
               </div>
               <h4 class="team-title">Connor Morgan</h4>
-              <div class="team-role">Co-Founder, software and website developer, brand expert, marketing strategist</div>
+              <div class="team-role">Co-Founder — Software &amp; Web Development, Brand Strategy, Marketing Systems</div>
             </div>
             <div id="w-node-_4c6f7ad3-daa9-3af2-06e0-53a57601c152-6a8475f1" data-w-id="4c6f7ad3-daa9-3af2-06e0-53a57601c152">
-              <div class="team-image-wrapper"><img src="images/team-2.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.9921875px, 798px" srcset="images/team-2-p-500.jpg 500w, images/team-2.jpg 798w" alt="Portrait of Anna Peterson." class="team-image">
+              <div class="team-image-wrapper"><img src="images/team-2.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.9921875px, 798px" srcset="images/team-2-p-500.jpg 500w, images/team-2.jpg 798w" alt="Portrait of Gabi Taylor." class="team-image">
                 <div class="team-links">
                   <a rel="noopener nofollow" href="https://linkedin.com/" target="_blank" class="team-link w-inline-block">
                     <div>LinkedIn</div>
@@ -536,10 +714,10 @@ body{
                 </div>
               </div>
               <h4 class="team-title">Gabi Taylor</h4>
-              <div class="team-role">Co-Founder, Brand and marketing expert, creative director</div>
+              <div class="team-role">Co-Founder — Creative Direction, Brand Identity, Marketing Strategy</div>
             </div>
             <div id="w-node-_4c6f7ad3-daa9-3af2-06e0-53a57601c160-6a8475f1" data-w-id="4c6f7ad3-daa9-3af2-06e0-53a57601c160">
-              <div class="team-image-wrapper"><img src="images/team-3.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.9921875px, 798px" srcset="images/team-3-p-500.jpg 500w, images/team-3.jpg 798w" alt="Portrait of Thomas Johnson." class="team-image">
+              <div class="team-image-wrapper"><img src="images/team-3.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.9921875px, 798px" srcset="images/team-3-p-500.jpg 500w, images/team-3.jpg 798w" alt="Portrait of Matt Reily." class="team-image">
                 <div class="team-links">
                   <a rel="noopener nofollow" href="https://linkedin.com/" target="_blank" class="team-link w-inline-block">
                     <div>LinkedIn</div>
@@ -550,12 +728,14 @@ body{
                 </div>
               </div>
               <h4 class="team-title">Matt Reily</h4>
-              <div class="team-role">Co-Founder, Marketing Expert, trend expert, project manager</div>
+              <div class="team-role">Co-Founder — Growth Marketing, Trend Strategy, Project Management</div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- FOOTER -->
     <section class="footer">
       <div class="footer-rows">
         <div class="footer-row-top">
@@ -704,7 +884,7 @@ body{
         <div class="footer-row-bottom">
           <div class="w-layout-blockcontainer container-fluid w-container">
             <div style="display:flex; justify-content:space-between; align-items:center; padding: 20px 0; flex-wrap:wrap; gap:12px;">
-              <div style="font-size:12px; opacity:0.45;">© 2025 MOSO. All rights reserved.</div>
+              <div style="font-size:12px; opacity:0.45;">© 2026 MOSO. All rights reserved.</div>
               <div style="display:flex; gap:24px; flex-wrap:wrap;">
                 <a href="privacy.html" style="font-size:12px; opacity:0.45; text-decoration:none; color:inherit;">Privacy Policy</a>
                 <a href="terms-of-use.html" style="font-size:12px; opacity:0.45; text-decoration:none; color:inherit;">Terms of Service</a>
