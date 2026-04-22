@@ -21,6 +21,9 @@ function rewritePaths(html: string) {
   out = out.replaceAll('href="contact.html"', 'href="/contact"')
   out = out.replaceAll('href="careers.html"', 'href="/careers"')
   out = out.replaceAll('href="newsletter.html"', 'href="/newsletter"')
+  out = out.replaceAll('href="privacy.html"', 'href="/privacy"')
+  out = out.replaceAll('href="terms-of-use.html"', 'href="/terms-of-use"')
+  out = out.replaceAll('href="ethics.html"', 'href="/ethics"')
   return out
 }
 
@@ -49,9 +52,10 @@ function extractShell(htmlFile: string) {
   const body = bodyMatch?.[1] ?? ""
 
   // Extract navbar: everything from <nav class="navbar"> up to where content starts
-  const contentBoundary = '<div class="div-block-4">'
   const navStart = body.indexOf('<nav class="navbar">')
-  const contentIdx = body.indexOf(contentBoundary)
+  // Try primary boundary, fall back to section-top (used in blog.html)
+  let contentIdx = body.indexOf('<div class="div-block-4">')
+  if (contentIdx < 0) contentIdx = body.indexOf('<section class="section-top">')
   const navbar = navStart >= 0 && contentIdx > navStart
     ? body.slice(navStart, contentIdx).trim()
     : ""

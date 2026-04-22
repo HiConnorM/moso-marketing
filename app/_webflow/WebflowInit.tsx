@@ -38,31 +38,50 @@ export function WebflowInit({
       }
     }
 
-    const initWebflow = () => {
+    let cancelled = false
+    let attempts = 0
+    const maxAttempts = 30 // poll up to 3 seconds
+
+    // Reveal the page and fire Webflow IX2 page-load animations.
+    // We poll until window.Webflow is available because jQuery + webflow.js
+    // load with strategy="afterInteractive" and may not be ready yet.
+    const tryInit = () => {
+      if (cancelled) return
+      attempts++
+
       if (window.Webflow) {
         try {
           window.Webflow.destroy()
           window.Webflow.ready()
           const ix2 = window.Webflow.require("ix2")
           if (ix2) {
+            // destroy first to reset any previously-run page-load animation state,
+            // then re-init so page-load triggers fire fresh every navigation
+            ix2.destroy()
             ix2.init()
           }
         } catch (e) {
           // IX2 may not be available on all pages
         }
-      }
 
-      // Force page-wrapper visible (IX2 page-load opacity animation
-      // doesn't reliably replay in SPA/Next.js context)
-      const pw = document.querySelector<HTMLElement>(".page-wrapper")
-      if (pw) {
-        pw.style.opacity = "1"
+        // Reveal page — IX2 will have already started the entrance animations
+        const pw = document.querySelector<HTMLElement>(".page-wrapper")
+        if (pw) pw.style.opacity = "1"
+
+      } else if (attempts < maxAttempts) {
+        // Webflow not ready yet — keep polling every 100 ms
+        setTimeout(tryInit, 100)
+      } else {
+        // Timeout: just reveal the page without animations
+        const pw = document.querySelector<HTMLElement>(".page-wrapper")
+        if (pw) pw.style.opacity = "1"
       }
     }
 
-    // Wait for DOM to be painted and scripts to load
-    const timer = setTimeout(initWebflow, 150)
-    return () => clearTimeout(timer)
+    // Short initial delay so the DOM has been painted before we touch Webflow
+    setTimeout(tryInit, 80)
+
+    return () => { cancelled = true }
   }, [pageId, siteId])
 
   return null

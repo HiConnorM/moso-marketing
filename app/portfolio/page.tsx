@@ -2,9 +2,10 @@ import { WebflowShell } from "../_webflow/WebflowShell"
 import { PortfolioContent } from "../_components/PortfolioContent"
 
 export const metadata = {
-  title: "Portfolio | MOSO — Selected Work",
+  title: "Portfolio — MOSO | Brand, Web & Digital Work",
   description:
-    "Explore selected MOSO work across branding, UI/UX, Webflow/Framer, custom apps, and marketing systems—built for performance and longevity.",
+    "Explore selected work from MOSO across brand identity, website design, digital products, and growth systems — built for impact and built to last.",
+  alternates: { canonical: "https://www.moso.marketing/portfolio" },
 }
 
 export default function Portfolio() {

@@ -89,7 +89,7 @@ export function ProjectDetail({ project }: { project: Project }) {
           <div className="hero-image-inner">
             <div
               className="moso-portfolio-hero-bg"
-              style={{ backgroundImage: `url(${project.thumbnail})` }}
+              style={{ backgroundImage: `url(${project.heroImage ?? project.gallery[0] ?? project.thumbnail})` }}
             />
           </div>
         </div>

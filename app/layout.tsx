@@ -3,9 +3,45 @@ import Script from "next/script"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Moso — Creative Studio | Design Your Future | Global Branding, Marketing & Software Design",
+  title: {
+    default: "MOSO — Design Your Future | Brand, Web & Growth Studio",
+    template: "%s | MOSO",
+  },
   description:
-    "Moso is a boutique creative agency crafting world-class branding, marketing, website design, and custom software. Born in Louisiana, building the future worldwide.",
+    "MOSO is a design and technology studio helping ambitious brands build clarity, presence, and momentum through strategy, branding, web design, digital products, and growth systems.",
+  keywords: ["brand strategy", "web design", "digital design", "Webflow development", "SEO", "AEO", "growth marketing", "design studio", "Louisiana creative studio"],
+  authors: [{ name: "MOSO", url: "https://www.moso.marketing" }],
+  creator: "MOSO",
+  publisher: "MOSO",
+  metadataBase: new URL("https://www.moso.marketing"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.moso.marketing",
+    siteName: "MOSO",
+    title: "MOSO — Design Your Future | Brand, Web & Growth Studio",
+    description: "MOSO helps brands clarify who they are, build what they need, and grow with intention — through strategy, design, technology, and thoughtful marketing.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MOSO — Design Your Future | Brand, Web & Growth Studio",
+    description: "MOSO helps brands clarify who they are, build what they need, and grow with intention — through strategy, design, technology, and thoughtful marketing.",
+    creator: "@moso_marketing",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: "/images/favicon.png",
     apple: "/images/webclip.png",

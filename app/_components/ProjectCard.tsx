@@ -15,7 +15,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index, layout }: ProjectCardProps) {
   const cardRef = useRef<HTMLAnchorElement>(null)
-  const imageRef = useRef<HTMLDivElement>(null)
+  const imageRef = useRef<HTMLImageElement>(null)
 
   useEffect(() => {
     const card = cardRef.current
@@ -23,8 +23,7 @@ export function ProjectCard({ project, index, layout }: ProjectCardProps) {
 
     gsap.set(card, { opacity: 0, y: 60 })
 
-    // If card is already in the viewport (e.g. after a layout switch), animate immediately.
-    // Otherwise use ScrollTrigger so it animates as the user scrolls down.
+    // Animate immediately if already in viewport, otherwise on scroll
     const rect = card.getBoundingClientRect()
     const inView = rect.top < window.innerHeight && rect.bottom > 0
 
@@ -35,7 +34,7 @@ export function ProjectCard({ project, index, layout }: ProjectCardProps) {
         opacity: 1,
         y: 0,
         duration: 0.7,
-        delay: index * 0.04,
+        delay: index * 0.06,
         ease: "power3.out",
       })
     } else {
@@ -43,11 +42,11 @@ export function ProjectCard({ project, index, layout }: ProjectCardProps) {
         opacity: 1,
         y: 0,
         duration: 0.8,
-        delay: layout === "grid" ? (index % 2) * 0.15 : 0,
+        delay: layout === "grid" ? (index % 2) * 0.12 : 0,
         ease: "power3.out",
         scrollTrigger: {
           trigger: card,
-          start: "top 85%",
+          start: "top 88%",
           toggleActions: "play none none none",
         },
       })
@@ -62,27 +61,24 @@ export function ProjectCard({ project, index, layout }: ProjectCardProps) {
   }, [index, layout])
 
   const handleMouseEnter = () => {
-    const img = imageRef.current
-    if (img) {
-      gsap.to(img, { scale: 1.05, filter: "brightness(0.85)", duration: 0.5, ease: "power2.out" })
+    if (imageRef.current) {
+      gsap.to(imageRef.current, { scale: 1.06, duration: 0.5, ease: "power2.out" })
     }
   }
 
   const handleMouseLeave = () => {
-    const img = imageRef.current
-    if (img) {
-      gsap.to(img, { scale: 1.0, filter: "brightness(0.6)", duration: 0.5, ease: "power2.out" })
+    if (imageRef.current) {
+      gsap.to(imageRef.current, { scale: 1.0, duration: 0.5, ease: "power2.out" })
     }
   }
 
+  // ─── List layout ──────────────────────────────────────────────────────────
   if (layout === "list") {
     return (
       <a
         ref={cardRef}
         href={`/portfolio/${project.slug}`}
         className="moso-project-list-item"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
         style={{ willChange: "transform, opacity" }}
       >
         <div className="moso-project-list-divider" />
@@ -104,6 +100,7 @@ export function ProjectCard({ project, index, layout }: ProjectCardProps) {
     )
   }
 
+  // ─── Grid / Behance card layout ───────────────────────────────────────────
   return (
     <a
       ref={cardRef}
@@ -113,31 +110,37 @@ export function ProjectCard({ project, index, layout }: ProjectCardProps) {
       onMouseLeave={handleMouseLeave}
       style={{ willChange: "transform, opacity" }}
     >
+      {/* Logo / brand image — fills the card, scales on hover via GSAP */}
       <div className="moso-project-card-image-wrap">
-        <div ref={imageRef} className="moso-project-card-image" style={{
-          backgroundImage: `url(${project.thumbnail})`,
-          filter: "brightness(0.6)",
-        }} />
-        <div className="moso-project-card-overlay">
-          <div className="moso-project-card-info">
-            <div className="moso-project-card-top">
-              <div className="moso-project-card-title-row">
-                <h3 className="moso-project-card-title">{project.title}</h3>
-                <div className="moso-project-card-arrow">
-                  <img src="/images/arrow-up-right-white.svg" alt="" />
-                </div>
-              </div>
-              <div className="moso-project-card-divider" />
-              <div className="moso-project-card-client">{project.client}</div>
-            </div>
-            <div className="moso-project-card-category">{project.category}</div>
+        <img
+          ref={imageRef}
+          className="moso-project-card-image"
+          src={project.thumbnail}
+          alt={`${project.title} logo`}
+          loading="lazy"
+        />
+      </div>
+
+      {/* Meta below the image — Behance style */}
+      <div className="moso-project-card-body">
+        <div className="moso-project-card-title-row">
+          <h3 className="moso-project-card-title">{project.title}</h3>
+          <div className="moso-project-card-arrow">
+            <img src="/images/arrow-up-right.svg" alt="" />
           </div>
         </div>
-      </div>
-      <div className="moso-project-card-tags">
-        {project.tags.map((tag) => (
-          <span key={tag} className="moso-project-tag">{tag}</span>
-        ))}
+
+        <div className="moso-project-card-meta">
+          <span className="moso-project-card-client">{project.client}</span>
+          <span className="moso-project-card-sep">·</span>
+          <span className="moso-project-card-category">{project.category}</span>
+        </div>
+
+        <div className="moso-project-card-tags">
+          {project.tags.map((tag) => (
+            <span key={tag} className="moso-project-tag">{tag}</span>
+          ))}
+        </div>
       </div>
     </a>
   )

@@ -1,10 +1,15 @@
-<!DOCTYPE html><!--  Last Published: Tue Mar 31 2026 06:08:35 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="6933bd6e7c082445a703456c" data-wf-site="67ea24be240797066a84755c" lang="en">
+<!DOCTYPE html>
+<html data-wf-site="67ea24be240797066a84755c" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Terms of Use</title>
-  <meta content="Terms of Use" property="og:title">
-  <meta content="Terms of Use" property="twitter:title">
+  <title>Terms of Service — MOSO | Design &amp; Technology Studio</title>
+  <meta name="description" content="MOSO's Terms of Service govern use of our website and services. Read our client agreements, intellectual property policies, and usage terms.">
+  <meta name="keywords" content="MOSO terms of service, terms of use, client agreement, website terms, intellectual property">
+  <link rel="canonical" href="https://www.moso.marketing/terms-of-use">
+  <meta property="og:title" content="Terms of Service — MOSO">
+  <meta property="og:description" content="Terms governing use of MOSO's website and services.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
@@ -13,251 +18,420 @@
   <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
   <style>
-  <canvas id="liquid"></canvas>
-<script>
-  const canvas = document.getElementById("liquid");
-  const ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = 100; // Height of navbar
-  const points = [];
-  const pointCount = 20;
-  const spacing = canvas.width / (pointCount - 1);
-  for (let i = 0; i < pointCount; i++) {
-    points.push({ x: i * spacing, y: 50, vy: 0 });
-  }
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
-    ctx.beginPath();
-    ctx.moveTo(0, 100);
-    ctx.lineTo(points[0].x, points[0].y);
-    for (let i = 1; i < points.length; i++) {
-      ctx.lineTo(points[i].x, points[i].y);
-    }
-    ctx.lineTo(canvas.width, 100);
-    ctx.closePath();
-    ctx.fill();
-    requestAnimationFrame(animate);
-  }
-  animate();
-</script>
-body{
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-</style>
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .legal-page { padding: 120px 0 80px; }
+    .legal-container { max-width: 800px; margin: 0 auto; padding: 0 40px; }
+    .legal-eyebrow { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.5; margin-bottom: 16px; }
+    .legal-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; line-height: 1.1; margin-bottom: 12px; }
+    .legal-updated { font-size: 13px; opacity: 0.45; margin-bottom: 60px; padding-bottom: 40px; border-bottom: 1px solid rgba(0,0,0,0.12); }
+    .legal-section { margin-bottom: 48px; }
+    .legal-section h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 16px; margin-top: 0; }
+    .legal-section h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 10px; margin-top: 24px; }
+    .legal-section p { font-size: 0.95rem; line-height: 1.75; opacity: 0.75; margin-bottom: 14px; }
+    .legal-section ul { font-size: 0.95rem; line-height: 1.75; opacity: 0.75; padding-left: 20px; margin-bottom: 14px; }
+    .legal-section ul li { margin-bottom: 6px; }
+    .legal-highlight { background: rgba(0,0,0,0.04); border-left: 3px solid currentColor; padding: 16px 20px; border-radius: 2px; margin-bottom: 24px; opacity: 0.85; font-size: 0.9rem; line-height: 1.7; }
+    .legal-contact-box { border: 1px solid rgba(0,0,0,0.12); padding: 24px; border-radius: 4px; margin-top: 24px; }
+    .legal-contact-box p { margin-bottom: 4px; font-size: 0.9rem; opacity: 0.7; }
+    .legal-contact-box a { color: inherit; }
+    @media (max-width: 767px) { .legal-container { padding: 0 24px; } .legal-page { padding: 100px 0 60px; } }
+  </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-glass-effect"></div>
-    <div class="navbar-glass-tint"></div>
-    <div class="navbar-glass-shine"></div>
-    <div class="navbar-glass-filter w-embed"><svg style="display: none">
-        <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterunits="objectBoundingBox">
-          <feturbulence type="fractalNoise" basefrequency="0.015 0.015" numoctaves="1" seed="5" result="turbulence">
-          <!--  Seeds: 14, 17,   -->
-          <fecomponenttransfer in="turbulence" result="mapped">
-            <fefuncr type="gamma" amplitude="1" exponent="10" offset="0.5">
-            <fefuncg type="gamma" amplitude="0" exponent="1" offset="0">
-            <fefuncb type="gamma" amplitude="0" exponent="1" offset="0.5">
-          </fefuncb></fefuncg></fefuncr></fecomponenttransfer>
-          <fegaussianblur in="turbulence" stddeviation="3" result="softMap">
-          <fespecularlighting in="softMap" surfacescale="5" specularconstant="1" specularexponent="100" lighting-color="white" result="specLight">
-            <fepointlight x="-200" y="-200" z="300">
-          </fepointlight></fespecularlighting>
-          <fecomposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage">
-          <fedisplacementmap in="SourceGraphic" in2="softMap" scale="60" xchannelselector="R" ychannelselector="G">
-        </fedisplacementmap></fecomposite></fegaussianblur></feturbulence></filter>
-      </svg></div>
-    <div data-w-id="4df39ded-9284-a4f9-05fd-857880f2dcc4" data-animation="default" data-collapse="tiny" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar-wrapper w-nav">
-      <div class="navbar-container">
-        <div class="navbar-logo-desktop">
-          <a href="index.html" class="navbar-logo-link w-nav-brand"><img loading="lazy" height="40" alt="MOSO" src="images/moso-logo-color.svg" class="image-2"></a>
-        </div>
-        <div class="navbar-logo-mobile">
-          <a href="index.html" class="navbar-logo-link w-nav-brand"><img loading="lazy" height="Auto" alt="" src="images/moso-circle-white.svg" class="image-2"></a>
-        </div>
-        <nav role="navigation" class="navbar-menu w-nav-menu">
-          <div class="navbar-menu-left">
-            <a href="portfolio.html" class="navbar-link w-nav-link">Portfolio</a>
-            <a href="services.html" class="navbar-link w-nav-link">Services</a>
-            <div data-delay="300" data-hover="false" data-w-id="4df39ded-9284-a4f9-05fd-857880f2dcce" class="menu-dropdown w-dropdown">
-              <div class="dropdown-toggle w-dropdown-toggle">
-                <div class="w-icon-dropdown-toggle"></div>
-                <div class="dropdown-title">Resources</div>
-              </div>
-              <nav class="dropdown-list w-dropdown-list">
-                <div class="dropdown-link-menu">
-                  <a href="blog.html" class="dropdown-link w-inline-block">
-                    <div class="dropdown-links">Blog</div>
-                  </a>
-                      <a href="/free-audit" class="dropdown-link w-inline-block">
-                        <div class="dropdown-links">Free Website Audit</div>
-                      </a>
-                  <a href="#" class="dropdown-link w-inline-block">
-                    <div class="dropdown-links">Learning Hub</div>
-                  </a>
-                  <a href="#" class="dropdown-link w-inline-block">
-                    <div class="dropdown-links">Events</div>
-                  </a>
-                  <a href="#" class="dropdown-link w-inline-block">
-                    <div class="dropdown-links">Newsletter</div>
-                  </a>
-                  <a href="#" class="dropdown-link w-inline-block">
-                    <div class="dropdown-links">Careers</div>
-                  </a>
-                </div>
-              </nav>
-            </div>
-            <a href="contact.html" class="navbar-link w-nav-link">Contact</a>
+  <div class="page-wrapper" style="opacity:1">
+    <div id="top" class="top"></div>
+    <div class="div-block-2">
+      <nav class="navbar">
+      <div class="navbar-glass-effect"></div>
+      <div class="navbar-glass-tint"></div>
+      <div class="navbar-glass-shine"></div>
+      <div class="navbar-glass-filter w-embed"><svg style="display: none">
+          <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterunits="objectBoundingBox">
+            <feturbulence type="fractalNoise" basefrequency="0.015 0.015" numoctaves="1" seed="5" result="turbulence">
+            <!--  Seeds: 14, 17,   -->
+            <fecomponenttransfer in="turbulence" result="mapped">
+              <fefuncr type="gamma" amplitude="1" exponent="10" offset="0.5">
+              <fefuncg type="gamma" amplitude="0" exponent="1" offset="0">
+              <fefuncb type="gamma" amplitude="0" exponent="1" offset="0.5">
+            </fefuncb></fefuncg></fefuncr></fecomponenttransfer>
+            <fegaussianblur in="turbulence" stddeviation="3" result="softMap">
+            <fespecularlighting in="softMap" surfacescale="5" specularconstant="1" specularexponent="100" lighting-color="white" result="specLight">
+              <fepointlight x="-200" y="-200" z="300">
+            </fepointlight></fespecularlighting>
+            <fecomposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage">
+            <fedisplacementmap in="SourceGraphic" in2="softMap" scale="60" xchannelselector="R" ychannelselector="G">
+          </fedisplacementmap></fecomposite></fegaussianblur></feturbulence></filter>
+        </svg></div>
+      <div data-w-id="4df39ded-9284-a4f9-05fd-857880f2dcc4" data-animation="default" data-collapse="tiny" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar-wrapper w-nav">
+        <div class="navbar-container">
+          <div class="navbar-logo-desktop">
+            <a href="index.html" class="navbar-logo-link w-nav-brand"><img loading="lazy" height="40" alt="MOSO" src="images/moso-logo-color.svg" class="image-2"></a>
           </div>
-          <div class="navbar-menu-right">
-            <div class="locales-wrapper w-locales-list">
-              <div data-delay="0" data-hover="false" class="w-dropdown">
+          <div class="navbar-logo-mobile">
+            <a href="index.html" class="navbar-logo-link w-nav-brand"><img loading="lazy" height="Auto" alt="" src="images/moso-circle-white.svg" class="image-2"></a>
+          </div>
+          <nav role="navigation" class="navbar-menu w-nav-menu">
+            <div class="navbar-menu-left">
+              <a href="portfolio.html" class="navbar-link w-nav-link">Portfolio</a>
+              <a href="services.html" class="navbar-link w-nav-link">Services</a>
+              <div data-delay="300" data-hover="false" data-w-id="4df39ded-9284-a4f9-05fd-857880f2dcce" class="menu-dropdown w-dropdown">
                 <div class="dropdown-toggle w-dropdown-toggle">
                   <div class="w-icon-dropdown-toggle"></div>
-                  <div class="dropdown-title">Language</div>
+                  <div class="dropdown-title">Resources</div>
                 </div>
                 <nav class="dropdown-list w-dropdown-list">
-                  <div role="list" class="dropdown-link-menu w-locales-items">
-                    <div role="listitem" class="locale w-locales-item">
-                      <a href="#" class="dropdown-links"></a>
-                    </div>
+                  <div class="dropdown-link-menu">
+                    <a href="blog.html" class="dropdown-link w-inline-block">
+                      <div class="dropdown-links">Studio Notes</div>
+                    </a>
+                    <a href="/free-audit" class="dropdown-link w-inline-block">
+                      <div class="dropdown-links">Free Website Audit</div>
+                    </a>
+                    <a href="ethics.html" class="dropdown-link w-inline-block">
+                      <div class="dropdown-links">Ethics &amp; Sustainability</div>
+                    </a>
+                    <a href="contact.html" class="dropdown-link w-inline-block">
+                      <div class="dropdown-links">Careers</div>
+                    </a>
                   </div>
                 </nav>
               </div>
+              <a href="contact.html" class="navbar-link w-nav-link">Contact</a>
             </div>
-            <div class="navbar-button-wrapper">
-              <a data-w-id="4f71b29c-f0ac-2dc4-9f94-6cc4f6c3e7e0" href="contact.html" class="button white w-inline-block">
-                <div class="button-container">
-                  <div class="overflow-hidden">
-                    <div class="button-inner">
-                      <div class="button-icon-back"><img src="images/moso-star-black.svg" loading="lazy" alt=""></div>
-                      <div class="button-text-wrapper">
-                        <div class="button-text-front">Get started</div>
-                        <div aria-hidden="true" class="button-text-back">Get started</div>
+            <div class="navbar-menu-right">
+              <div class="locales-wrapper w-locales-list">
+                <div data-delay="0" data-hover="false" class="w-dropdown">
+                  <div class="dropdown-toggle w-dropdown-toggle">
+                    <div class="w-icon-dropdown-toggle"></div>
+                    <div class="dropdown-title">Language</div>
+                  </div>
+                  <nav class="dropdown-list w-dropdown-list">
+                    <div role="list" class="dropdown-link-menu w-locales-items">
+                      <div role="listitem" class="locale w-locales-item">
+                        <a href="#" class="dropdown-links"></a>
                       </div>
-                      <div class="button-icon-front"><img src="images/moso-star-black.svg" loading="lazy" alt=""></div>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+              <div class="navbar-button-wrapper">
+                <a data-w-id="4f71b29c-f0ac-2dc4-9f94-6cc4f6c3e7e0" href="contact.html" class="button white w-inline-block">
+                  <div class="button-container">
+                    <div class="overflow-hidden">
+                      <div class="button-inner">
+                        <div class="button-icon-back"><img src="images/moso-star-black.svg" loading="lazy" alt=""></div>
+                        <div class="button-text-wrapper">
+                          <div class="button-text-front">Get started</div>
+                          <div aria-hidden="true" class="button-text-back">Get started</div>
+                        </div>
+                        <div class="button-icon-front"><img src="images/moso-star-black.svg" loading="lazy" alt=""></div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </nav>
+          <div class="navbar-menu-button w-nav-button">
+            <div class="menu-icon-component">
+              <div class="menu-icon-line-top"></div>
+              <div class="menu-icon-line-middle">
+                <div class="menu-icon-middle-line"></div>
+              </div>
+              <div class="menu-icon-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+    <main class="legal-page" itemscope itemtype="https://schema.org/WebPage">
+      <div class="legal-container">
+
+        <div class="legal-eyebrow">Legal</div>
+        <h1 class="legal-title">Terms of Service</h1>
+        <p class="legal-updated">Last updated: April 21, 2026 &nbsp;|&nbsp; Effective date: April 21, 2026</p>
+
+        <div class="legal-highlight">
+          Please read these Terms of Service carefully before using the MOSO website or engaging MOSO for services. By accessing our site or entering into a service agreement with MOSO, you agree to be bound by these terms.
+        </div>
+
+        <div class="legal-section">
+          <h2>1. About MOSO</h2>
+          <p>MOSO is a design and technology studio based in New Orleans, Louisiana, USA. We provide brand strategy, web design and development, digital product design, growth marketing, content strategy, SEO, AEO, and business automation services. These Terms govern both your use of our website and any professional services relationship entered into with MOSO.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>2. Website Use</h2>
+          <h3>Permitted Use</h3>
+          <p>You may access and use the MOSO website for lawful purposes related to learning about our services, reviewing our portfolio, contacting us, and accessing our published resources. You agree not to:</p>
+          <ul>
+            <li>Use the site in any way that violates applicable laws or regulations</li>
+            <li>Attempt to gain unauthorized access to any part of the site or our systems</li>
+            <li>Scrape, crawl, or harvest content from the site in bulk without written permission</li>
+            <li>Use the site to transmit spam, malware, or harmful code</li>
+            <li>Impersonate MOSO or misrepresent your affiliation with MOSO</li>
+            <li>Reproduce, republish, or redistribute site content without permission</li>
+          </ul>
+          <h3>Availability</h3>
+          <p>We strive to keep the MOSO website available and accurate, but do not guarantee uninterrupted access. We reserve the right to modify, suspend, or discontinue any part of the site at any time without notice.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>3. Professional Services</h2>
+          <h3>Engagement Agreements</h3>
+          <p>All professional services engagements (brand strategy, web design, development, marketing, etc.) are governed by a separate written proposal and/or service agreement signed by both parties. These Terms are incorporated by reference into all such agreements unless explicitly excluded.</p>
+          <h3>Scope of Work</h3>
+          <p>Services will be delivered as described in the applicable proposal or statement of work. Material changes to scope, timeline, or deliverables require written agreement from both parties.</p>
+          <h3>Client Responsibilities</h3>
+          <p>Clients agree to provide accurate information, timely feedback, and reasonable access to the materials and stakeholders needed to complete the work. Delays caused by the client may affect project timelines.</p>
+          <h3>Revisions</h3>
+          <p>Revision rounds included in an engagement are specified in the project proposal. Additional revisions beyond the agreed scope may be subject to additional fees, communicated transparently before proceeding.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>4. Payment Terms</h2>
+          <p>Payment terms are defined in each project proposal. Standard terms are:</p>
+          <ul>
+            <li><strong>Deposit:</strong> A percentage of the project fee is due before work begins, as specified in the proposal</li>
+            <li><strong>Milestones:</strong> Remaining payments are tied to project milestones as outlined in the agreement</li>
+            <li><strong>Late payments:</strong> Invoices not paid within the agreed period may incur a late fee of 1.5% per month on the outstanding balance</li>
+            <li><strong>Work stoppage:</strong> MOSO reserves the right to pause work if payments are significantly overdue</li>
+          </ul>
+          <p>All fees are quoted in US dollars unless otherwise stated.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>5. Intellectual Property</h2>
+          <h3>Client Ownership</h3>
+          <p>Upon receipt of full payment, clients receive full ownership rights to the final deliverables specifically created for them under a service agreement — including logos, design files, website code, and written content produced on their behalf.</p>
+          <h3>MOSO Ownership</h3>
+          <p>MOSO retains ownership of all preliminary concepts, unused drafts, proprietary tools, frameworks, templates, and methodologies used in the creation of client deliverables. These may be reused in other client engagements.</p>
+          <h3>Portfolio Rights</h3>
+          <p>MOSO reserves the right to display completed client work in our portfolio, case studies, and promotional materials unless the client requests confidentiality in writing prior to project completion.</p>
+          <h3>Website Content</h3>
+          <p>All content on the MOSO website — including text, images, graphics, logos, and design — is owned by MOSO and protected by applicable intellectual property laws. Unauthorized reproduction is prohibited.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>6. Confidentiality</h2>
+          <p>Both parties agree to treat as confidential any non-public information shared in the course of the engagement — including business plans, financial information, strategies, client lists, and technical data. Confidentiality obligations survive the end of any engagement for a period of two years unless otherwise agreed. This does not apply to information that is publicly available or independently developed.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>7. Warranties and Disclaimers</h2>
+          <p>MOSO warrants that services will be performed with reasonable professional skill and care, and that final deliverables will materially conform to the agreed specifications.</p>
+          <p>The MOSO website is provided "as is" without warranties of any kind, express or implied. We do not warrant that the site will be error-free, uninterrupted, or free of viruses or harmful components.</p>
+          <p>Results from marketing, SEO, or AEO services depend on many factors outside MOSO's control, including third-party platform algorithms, market conditions, and competitor activity. We do not guarantee specific rankings, traffic levels, or revenue outcomes.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>8. Limitation of Liability</h2>
+          <p>To the fullest extent permitted by law, MOSO's total liability to you for any claims arising from these terms or any service engagement shall not exceed the total fees paid by you to MOSO in the three months preceding the claim.</p>
+          <p>MOSO shall not be liable for any indirect, incidental, consequential, or punitive damages — including lost profits, lost data, or business interruption — even if advised of the possibility of such damages.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>9. Termination</h2>
+          <p>Either party may terminate a service engagement with written notice. Upon termination:</p>
+          <ul>
+            <li>The client is responsible for payment of all work completed up to the termination date</li>
+            <li>MOSO will deliver all completed work product for which full or partial payment has been received</li>
+            <li>Deposits are non-refundable unless otherwise specified in the project agreement</li>
+          </ul>
+          <p>MOSO reserves the right to terminate or refuse service to any party that violates these Terms or engages in conduct inconsistent with our values and ethical commitments.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>10. Third-Party Links and Tools</h2>
+          <p>The MOSO website may contain links to third-party websites or tools. These are provided for convenience only. MOSO does not endorse or take responsibility for the content, practices, or privacy policies of any third-party site. Access to third-party services is at your own risk.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>11. Governing Law and Disputes</h2>
+          <p>These Terms are governed by the laws of the State of Louisiana, United States, without regard to conflict of law principles. Any disputes arising from these Terms or a service agreement shall first be addressed through good-faith negotiation. If unresolved, disputes shall be submitted to binding arbitration in New Orleans, Louisiana, in accordance with applicable arbitration rules. This does not prevent either party from seeking injunctive relief in a court of competent jurisdiction.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>12. Changes to These Terms</h2>
+          <p>We may update these Terms of Service from time to time. Material changes will be posted on this page with an updated effective date. Continued use of the website or engagement in services after changes constitutes acceptance of the revised terms.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>13. Contact</h2>
+          <p>Questions about these Terms? Contact us:</p>
+          <div class="legal-contact-box">
+            <p><strong>MOSO</strong></p>
+            <p>398 11th St, New Orleans, LA 70115</p>
+            <p>Email: <a href="mailto:info@moso.marketing">info@moso.marketing</a></p>
+            <p>Phone: <a href="tel:+18376528800">+1 837 652 8800</a></p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <section class="footer">
+      <div class="footer-rows">
+        <div class="footer-row-top">
+          <div class="w-layout-blockcontainer container-fluid w-container">
+            <div class="w-layout-grid grid-12-columns-small">
+              <div id="w-node-_34c36820-a366-a1f9-5f60-8acdfadff935-fadff930" class="footer-widget">
+                <div class="margin-bottom-extra-small">
+                  <div>Have a project in mind?</div>
+                </div>
+                <a data-w-id="97ccad51-b4a9-e0b3-bbdc-5d9e1a60ac9e" href="contact.html" class="button white small w-inline-block">
+                  <div class="button-container small">
+                    <div class="overflow-hidden">
+                      <div class="button-text-wrapper">
+                        <div class="button-text-front">Let&#x27;s Talk</div>
+                        <div aria-hidden="true" class="button-text-back">Let&#x27;s Talk</div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div id="w-node-_34c36820-a366-a1f9-5f60-8acdfadff93b-fadff930">
+                <div class="w-layout-grid grid-12-columns-zero">
+                  <div id="w-node-_34c36820-a366-a1f9-5f60-8acdfadff93d-fadff930" class="footer-widget">
+                    <div class="footer-links-wrapper">
+                      <a href="#" target="_blank" class="footer-link w-inline-block">
+                        <div class="footer-link-inner">
+                          <div class="footer-link-front">
+                            <div>Facebook</div>
+                          </div>
+                          <div class="footer-link-back">
+                            <div>Facebook</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" target="_blank" class="footer-link w-inline-block">
+                        <div class="footer-link-inner">
+                          <div class="footer-link-front">
+                            <div>Instagram</div>
+                          </div>
+                          <div class="footer-link-back">
+                            <div>Instagram</div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div id="w-node-_34c36820-a366-a1f9-5f60-8acdfadff943-fadff930" class="footer-widget">
+                    <div class="footer-links-wrapper">
+                      <a href="https://x.com/" target="_blank" class="footer-link w-inline-block">
+                        <div class="footer-link-inner">
+                          <div class="footer-link-front">
+                            <div>TikTok</div>
+                          </div>
+                          <div class="footer-link-back">
+                            <div>TikTok</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" target="_blank" class="footer-link w-inline-block">
+                        <div class="footer-link-inner">
+                          <div class="footer-link-front">
+                            <div>LinkedIn</div>
+                          </div>
+                          <div class="footer-link-back">
+                            <div>LinkedIn</div>
+                          </div>
+                        </div>
+                      </a>
                     </div>
                   </div>
                 </div>
-              </a>
-            </div>
-          </div>
-        </nav>
-        <div class="navbar-menu-button w-nav-button">
-          <div class="menu-icon-component">
-            <div class="menu-icon-line-top"></div>
-            <div class="menu-icon-line-middle">
-              <div class="menu-icon-middle-line"></div>
-            </div>
-            <div class="menu-icon-2"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <section data-w-id="7b0e847d-5ef7-1efe-e659-5cacc2677ead" class="section-hero">
-    <div class="hero-content-middle">
-      <div class="container-fluid">
-        <div class="align-center">
-          <div class="overflow-hidden">
-            <div class="hero-heading-wrapper">
-              <div class="hero-heading-one">
-                <div aria-hidden="true" data-w-id="02edd72a-1670-6752-6f61-1ba3c400a39e" class="page-title">Selected</div>
               </div>
-              <div class="hero-heading-two">
-                <div aria-hidden="true" data-w-id="02edd72a-1670-6752-6f61-1ba3c400a3a2" class="page-title">Selected</div>
-              </div>
-              <div class="hero-heading-three">
-                <h1 data-w-id="02edd72a-1670-6752-6f61-1ba3c400a3a6" class="page-title">Selected</h1>
-              </div>
-            </div>
-          </div>
-          <div class="overflow-hidden">
-            <div class="hero-heading-wrapper">
-              <div class="hero-heading-one">
-                <div aria-hidden="true" data-w-id="ac26ddfb-64ce-f027-9acd-385f9356a05d" class="page-title">Work</div>
-              </div>
-              <div class="hero-heading-two">
-                <div aria-hidden="true" data-w-id="ac26ddfb-64ce-f027-9acd-385f9356a05f" class="page-title">Work</div>
-              </div>
-              <div class="hero-heading-three">
-                <h1 data-w-id="ac26ddfb-64ce-f027-9acd-385f9356a061" class="page-title">Work</h1>
+              <div id="w-node-_34c36820-a366-a1f9-5f60-8acdfadff949-fadff930" class="footer-widget align-right">
+                <a href="#top" class="back-top-link w-inline-block">
+                  <div class="back-top-icon">
+                    <div class="back-top-icon-inner">
+                      <div class="back-top-icon-front"><img src="images/arrow-up.svg" loading="lazy" alt="" class="back-top-icon-image"></div>
+                      <div class="back-top-icon-back"><img src="images/arrow-up.svg" loading="lazy" alt="" class="back-top-icon-image"></div>
+                    </div>
+                  </div>
+                  <div class="back-top-text">Back to top</div>
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="hero-content-bottom">
-      <div class="hero-captions-wrapper">
-        <div class="w-layout-blockcontainer container-fluid w-container">
-          <div class="opacity-80">
-            <div class="w-layout-grid hero-caption-grid">
-              <div id="w-node-_7b0e847d-5ef7-1efe-e659-5cacc2677eba-c2677ead" data-w-id="7b0e847d-5ef7-1efe-e659-5cacc2677eba" class="hero-caption-first">
-                <div class="hero-caption">Design &amp; Development</div>
+        <div class="footer-row-middle">
+          <div class="overflow-hidden">
+            <div class="marquee">
+              <div class="marquee-track gutter-large">
+                <div class="marquee-item">
+                  <h2 class="footer-heading">MOSO</h2>
+                </div>
+                <div aria-hidden="true" class="marquee-item">
+                  <div class="footer-heading">MOSO</div>
+                </div>
+                <div aria-hidden="true" class="marquee-item">
+                  <div class="footer-heading">MOSO</div>
+                </div>
+                <div aria-hidden="true" class="marquee-item">
+                  <div class="footer-heading">MOSO</div>
+                </div>
+                <div aria-hidden="true" class="marquee-item">
+                  <div class="footer-heading">MOSO</div>
+                </div>
+                <div aria-hidden="true" class="marquee-item">
+                  <div class="footer-heading">MOSO</div>
+                </div>
               </div>
-              <div id="w-node-_7b0e847d-5ef7-1efe-e659-5cacc2677ebd-c2677ead" data-w-id="7b0e847d-5ef7-1efe-e659-5cacc2677ebd" class="hero-caption-second">
-                <div class="hero-caption">(©2021 <strong>—</strong> 2025)</div>
-              </div>
-              <div id="w-node-_7b0e847d-5ef7-1efe-e659-5cacc2677ec3-c2677ead" data-w-id="7b0e847d-5ef7-1efe-e659-5cacc2677ec3" class="hero-caption-third">
-                <div class="hero-caption-inner">
-                  <div class="hero-caption">Scroll Down</div><img src="images/arrow-down-right-small-white.svg" loading="lazy" alt="" class="hero-caption-icon">
+            </div>
+            <div class="marquee reverse">
+              <div class="marquee-track-reverse gutter-large">
+                <div class="marquee-item margin-left">
+                  <h2 class="footer-heading">AGENCY</h2>
+                </div>
+                <div aria-hidden="true" class="marquee-item margin-left">
+                  <div class="footer-heading">AGENCY</div>
+                </div>
+                <div aria-hidden="true" class="marquee-item margin-left">
+                  <div class="footer-heading">AGENCY</div>
+                </div>
+                <div aria-hidden="true" class="marquee-item margin-left">
+                  <div class="footer-heading">AGENCY</div>
+                </div>
+                <div aria-hidden="true" class="marquee-item margin-left">
+                  <div class="footer-heading">AGENCY</div>
+                </div>
+                <div aria-hidden="true" class="marquee-item margin-left">
+                  <div class="footer-heading">AGENCY</div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="footer-circle-wrapper">
+            <a data-w-id="d24234d6-f6a5-66cd-ad1c-2d2bd69cff4d" href="contact.html" class="footer-circle-link w-inline-block">
+              <div class="footer-circle-backgound">
+                <div class="footer-circle-border"></div>
+              </div><img src="images/footer-circle-text.svg" loading="lazy" data-w-id="d24234d6-f6a5-66cd-ad1c-2d2bd69cff50" alt="Let&#x27;s talk! Say hello!" class="footer-circle-image">
+              <div class="footer-circle-icon-wrapper">
+                <div class="footer-circle-icon-front"><img src="images/moso-circle-white.svg" loading="lazy" alt="" class="footer-circle-image"></div>
+                <div class="footer-circle-icon-back"><img src="images/moso-circle-white.svg" loading="lazy" alt="" class="footer-circle-image"></div>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
-    </div>
-    <div data-w-id="7b0e847d-5ef7-1efe-e659-5cacc2677ec8" class="hero-image-wrapper">
-      <div class="hero-image-inner">
-        <div data-delay="3200" data-animation="fade" class="hero-work-slider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="0" data-duration="1000" data-infinite="true">
-          <div class="hero-work-slider-mask w-slider-mask">
-            <div class="hero-work-slide w-slide"><img src="images/hero-work-1.jpg" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcset="images/a5be46f76532bf4b1f2c03a127a7959f_hero-work-1-p-500.jpg 500w, images/a5be46f76532bf4b1f2c03a127a7959f_hero-work-1-p-800.jpg 800w, images/a5be46f76532bf4b1f2c03a127a7959f_hero-work-1-p-1080.jpg 1080w, images/a5be46f76532bf4b1f2c03a127a7959f_hero-work-1-p-1600.jpg 1600w, images/hero-work-1.jpg 1920w" alt="Handsome young man in orange classes on clear sky background." class="hero-work-image"></div>
-            <div class="hero-work-slide w-slide"><img src="images/hero-work-2.jpg" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcset="images/ddae520b426c5d9993630466da5a57be_hero-work-2-p-500.jpg 500w, images/ddae520b426c5d9993630466da5a57be_hero-work-2-p-800.jpg 800w, images/ddae520b426c5d9993630466da5a57be_hero-work-2-p-1080.jpg 1080w, images/ddae520b426c5d9993630466da5a57be_hero-work-2-p-1600.jpg 1600w, images/hero-work-2.jpg 1920w" alt="Beautiful young woman in orange glasses on orange background." class="hero-work-image"></div>
-            <div class="hero-work-slide w-slide"><img src="images/hero-work-3.jpg" loading="eager" sizes="(max-width: 1920px) 100vw, 1920px" srcset="images/f01c780c91e7f1ff617e5e7294959338_hero-work-3-p-500.jpg 500w, images/f01c780c91e7f1ff617e5e7294959338_hero-work-3-p-800.jpg 800w, images/f01c780c91e7f1ff617e5e7294959338_hero-work-3-p-1080.jpg 1080w, images/f01c780c91e7f1ff617e5e7294959338_hero-work-3-p-1600.jpg 1600w, images/hero-work-3.jpg 1920w" alt="Single orange flower on the clear sky background." class="hero-work-image"></div>
+        <div class="footer-row-bottom">
+          <div class="w-layout-blockcontainer container-fluid w-container">
+            <div style="display:flex; justify-content:space-between; align-items:center; padding: 20px 0; flex-wrap:wrap; gap:12px;">
+              <div style="font-size:12px; opacity:0.45;">© 2025 MOSO. All rights reserved.</div>
+              <div style="display:flex; gap:24px; flex-wrap:wrap;">
+                <a href="privacy.html" style="font-size:12px; opacity:0.45; text-decoration:none; color:inherit;">Privacy Policy</a>
+                <a href="terms-of-use.html" style="font-size:12px; opacity:0.45; text-decoration:none; color:inherit;">Terms of Service</a>
+                <a href="ethics.html" style="font-size:12px; opacity:0.45; text-decoration:none; color:inherit;">Ethics &amp; Sustainability</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section>
-    <div>
-      <div>
-        <div class="w-richtext">
-          <h1>Heading 1</h1>
-          <h2>Heading 2</h2>
-          <h3>Heading 3</h3>
-          <h4>Heading 4</h4>
-          <h5>Heading 5</h5>
-          <h6>Heading 6</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          <blockquote>Block quote</blockquote>
-          <p>Ordered list</p>
-          <ol role="list">
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-          </ol>
-          <p>Unordered list</p>
-          <ul role="list">
-            <li>Item A</li>
-            <li>Item B</li>
-            <li>Item C</li>
-          </ul>
-          <p>
-            <a href="https://university.webflow.com/lesson/add-and-nest-text-links-in-webflow">Text link</a>
-          </p>
-          <p><strong>Bold text</strong></p>
-          <p><em>Emphasis</em></p>
-          <p><sup>Superscript</sup></p>
-          <p><sub>Subscript</sub></p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67ea24be240797066a84755c" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
 </body>

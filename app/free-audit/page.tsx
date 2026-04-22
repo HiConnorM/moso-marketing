@@ -4,15 +4,23 @@ import Footer from '../../components/Footer'
 import AuditForm from './_components/AuditForm'
 
 export const metadata: Metadata = {
-  title: 'Free AEO + SEO Audit — MOSO',
+  title: 'Free Website Audit — MOSO | SEO, AEO & Performance Analysis',
   description:
-    'Get a free, detailed audit of your website. See how your site is performing for search engines, AI answer engines, speed, and conversion — then get a prioritized action plan in your inbox.',
+    "Get a free, detailed audit of your website's SEO, AEO readiness, Core Web Vitals, and conversion signals. Real scores, real fixes — delivered to your inbox in minutes.",
+  keywords: ['free SEO audit', 'AEO audit', 'website audit', 'Core Web Vitals', 'SEO analysis', 'MOSO free audit'],
+  alternates: { canonical: 'https://www.moso.marketing/free-audit' },
   openGraph: {
-    title: 'Free AEO + SEO Audit — MOSO',
+    title: 'Free Website Audit — MOSO | SEO, AEO & Performance Analysis',
     description:
-      'See exactly what is helping, hurting, and holding back your site. Free detailed report sent to your inbox.',
+      'See exactly what is helping, hurting, and holding back your site. Free detailed report sent to your inbox in minutes.',
     url: 'https://www.moso.marketing/free-audit',
     siteName: 'MOSO',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Website Audit — MOSO | SEO, AEO & Performance Analysis',
+    description: 'See exactly what is helping, hurting, and holding back your site. Free detailed report sent to your inbox.',
   },
 }
 
@@ -107,8 +115,7 @@ export default function FreeAuditPage() {
         <section className="audit-trust">
           <div className="audit-container">
             <p className="audit-trust-copy">
-              Built by MOSO — a boutique creative agency helping brands grow through
-              search, content, and design. Born in Louisiana. Building the future worldwide.
+              Built by MOSO — a design and technology studio helping businesses grow with clarity, intention, and the right digital infrastructure. Born in Louisiana. Building futures worldwide.
             </p>
           </div>
         </section>

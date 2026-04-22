@@ -9,6 +9,9 @@ type WebflowRoute =
   | "/portfolio"
   | "/blog"
   | "/contact"
+  | "/privacy"
+  | "/terms-of-use"
+  | "/ethics"
 
 const routeToExportHtml: Record<WebflowRoute, string> = {
   "/": "index.html",
@@ -17,6 +20,9 @@ const routeToExportHtml: Record<WebflowRoute, string> = {
   "/portfolio": "portfolio.html",
   "/blog": "blog.html",
   "/contact": "contact.html",
+  "/privacy": "privacy.html",
+  "/terms-of-use": "terms-of-use.html",
+  "/ethics": "ethics.html",
 }
 
 const PAGE_IDS: Record<WebflowRoute, string> = {
@@ -26,6 +32,9 @@ const PAGE_IDS: Record<WebflowRoute, string> = {
   "/portfolio": "67ea24be240797066a8475fd",
   "/blog": "67ea24be240797066a8475f2",
   "/contact": "67ea24be240797066a8475f3",
+  "/privacy": "67ea24be240797066a8475aa",
+  "/terms-of-use": "67ea24be240797066a8475bb",
+  "/ethics": "67ea24be240797066a8475cc",
 }
 
 const SITE_ID = "67ea24be240797066a84755c"
@@ -53,6 +62,7 @@ function rewriteWebflowPaths(html: string) {
   out = out.replaceAll('href="newsletter.html"', 'href="/newsletter"')
   out = out.replaceAll('href="privacy.html"', 'href="/privacy"')
   out = out.replaceAll('href="terms-of-use.html"', 'href="/terms-of-use"')
+  out = out.replaceAll('href="ethics.html"', 'href="/ethics"')
 
   return out
 }

@@ -91,7 +91,7 @@ export function PortfolioContent() {
           <div className="hero-image-inner">
             <div
               className="moso-portfolio-hero-bg"
-              style={{ backgroundImage: `url(${projects[0]?.thumbnail || "/images/hero-work-1.jpg"})` }}
+              style={{ backgroundImage: `url(/images/hero-work-1.jpg)` }}
             />
           </div>
         </div>

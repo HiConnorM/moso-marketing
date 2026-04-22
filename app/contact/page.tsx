@@ -3,9 +3,10 @@ import { WebflowExportRoute } from "../_webflow/WebflowExportRoute"
 import { ContactFormOverride } from "../../components/ContactFormOverride"
 
 export const metadata: Metadata = {
-  title: "Contact — MOSO Creative Studio",
+  title: "Contact MOSO | Start Your Project — Brand, Web & Growth",
   description:
-    "Have a project in mind? Contact MOSO for branding, UI/UX, Webflow/Framer builds, custom software, and ethical marketing.",
+    "Ready to build something meaningful? Contact MOSO to discuss your brand, website, digital product, or growth strategy. We respond within one business day.",
+  alternates: { canonical: "https://www.moso.marketing/contact" },
 }
 
 export default function Contact() {
