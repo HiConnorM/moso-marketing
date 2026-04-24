@@ -26,6 +26,11 @@ export function rewriteWebflowPaths(html: string): string {
   out = out.replaceAll('href="privacy.html"', 'href="/privacy"')
   out = out.replaceAll('href="terms-of-use.html"', 'href="/terms-of-use"')
   out = out.replaceAll('href="ethics.html"', 'href="/ethics"')
+  // Align Webflow nav collapse breakpoint to match the site CSS (hamburger
+  // shows at ≤991px via moso-test-2-4b0411.webflow.css). Without this,
+  // Webflow.js only handles hamburger clicks at ≤479px ("tiny") and ignores
+  // taps between 480–991px, so the mobile menu never opens.
+  out = out.replace(/data-collapse="tiny"/g, 'data-collapse="medium"')
   return out
 }
 

@@ -19,7 +19,7 @@ html {
 }
 
 /* Glass panel visual treatment — applies at tablet + mobile */
-@media (max-width: 479px) {
+@media (max-width: 991px) {
   .navbar-menu.w-nav-menu {
     background: rgba(12, 12, 12, 0.55) !important;
     backdrop-filter: blur(28px) saturate(180%) brightness(0.85) !important;
