@@ -51,6 +51,12 @@ export function WebflowInit({
 
       if (window.Webflow) {
         try {
+          // Close any open mobile nav state before reinitializing
+          document.querySelectorAll(".w--open").forEach(el => el.classList.remove("w--open"))
+          document.querySelectorAll(".w-nav-overlay").forEach(el => el.remove())
+          document.body.style.overflow = ""
+          document.body.classList.remove("w-nav-open")
+
           window.Webflow.destroy()
           window.Webflow.ready()
           const ix2 = window.Webflow.require("ix2")
@@ -67,6 +73,24 @@ export function WebflowInit({
         // Reveal page — IX2 will have already started the entrance animations
         const pw = document.querySelector<HTMLElement>(".page-wrapper")
         if (pw) pw.style.opacity = "1"
+
+        // Hide the mobile nav menu if it's not open (Webflow positions it at
+        // top:-Npx but parent overflow:visible lets it bleed into the viewport)
+        const navMenu = document.querySelector<HTMLElement>(".navbar-menu.w-nav-menu")
+        if (navMenu && !navMenu.classList.contains("w--open")) {
+          navMenu.style.opacity = "0"
+          navMenu.style.pointerEvents = "none"
+        }
+        // Re-show it when Webflow opens it
+        const navBtn = document.querySelector(".w-nav-button")
+        if (navBtn) {
+          navBtn.addEventListener("click", () => {
+            if (navMenu) {
+              navMenu.style.opacity = ""
+              navMenu.style.pointerEvents = ""
+            }
+          }, { once: true })
+        }
 
       } else if (attempts < maxAttempts) {
         // Webflow not ready yet — keep polling every 100 ms
