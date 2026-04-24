@@ -18,8 +18,8 @@ html {
   100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-@media (max-width: 991px) {
-  /* The glass panel itself */
+/* Glass panel visual treatment — applies at tablet + mobile */
+@media (max-width: 479px) {
   .navbar-menu.w-nav-menu {
     background: rgba(12, 12, 12, 0.55) !important;
     backdrop-filter: blur(28px) saturate(180%) brightness(0.85) !important;
@@ -36,8 +36,9 @@ html {
     overflow: hidden !important;
   }
 
-  /* Hide the glass panel when menu is closed (Webflow positions it at top:-Npx
-     but the parent has overflow:visible so it bleeds into the viewport) */
+  /* Hide when closed — Webflow positions the closed menu at a negative top
+     offset; overflow:visible on the parent lets it bleed into the viewport.
+     CSS-only fix: hide until Webflow adds w--open on hamburger tap. */
   .navbar-menu.w-nav-menu:not(.w--open) {
     opacity: 0 !important;
     pointer-events: none !important;
@@ -50,7 +51,7 @@ html {
     animation: liquidGlassIn 0.52s cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
   }
 
-  /* Text stays crisp white */
+  /* Text stays crisp white inside the glass panel */
   .navbar-menu.w-nav-menu .navbar-link,
   .navbar-menu.w-nav-menu .w-nav-link,
   .navbar-menu.w-nav-menu .dropdown-title,
