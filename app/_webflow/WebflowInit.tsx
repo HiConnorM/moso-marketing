@@ -42,6 +42,32 @@ export function WebflowInit({
     let attempts = 0
     const maxAttempts = 30 // poll up to 3 seconds
 
+    // ── Tablet hamburger handler ────────────────────────────────────────────
+    // The HTML nav uses data-collapse="tiny", so Webflow.js only handles
+    // hamburger clicks at ≤479px. For 480–991px (tablet / landscape phone)
+    // Webflow thinks it's in "desktop mode" and ignores hamburger taps, so
+    // we wire up our own toggle. We use AbortController so the listener is
+    // cleaned up on every page navigation, preventing duplicate handlers.
+    const abortCtrl = new AbortController()
+
+    const hamburger = document.querySelector<HTMLElement>(".w-nav-button")
+    const navMenu   = document.querySelector<HTMLElement>(".w-nav-menu")
+
+    if (hamburger && navMenu) {
+      hamburger.addEventListener("click", () => {
+        const vw = window.innerWidth
+        // Only act in the range where Webflow.js won't (480–991 px).
+        // At ≤479 px Webflow.js handles it natively; at ≥992 px the
+        // hamburger isn't visible so this is a no-op either way.
+        if (vw > 479 && vw <= 991) {
+          const opening = !navMenu.classList.contains("w--open")
+          navMenu.classList.toggle("w--open", opening)
+          hamburger.classList.toggle("w--open", opening)
+          document.body.classList.toggle("w-nav-open", opening)
+        }
+      }, { signal: abortCtrl.signal })
+    }
+
     // Reveal the page and fire Webflow IX2 page-load animations.
     // We poll until window.Webflow is available because jQuery + webflow.js
     // load with strategy="afterInteractive" and may not be ready yet.
@@ -74,10 +100,6 @@ export function WebflowInit({
         const pw = document.querySelector<HTMLElement>(".page-wrapper")
         if (pw) pw.style.opacity = "1"
 
-        // Mobile nav show/hide is handled entirely by CSS in globals.css using
-        // the .w--open class that Webflow toggles on the nav menu element.
-        // No JS opacity/pointer-events manipulation needed here.
-
       } else if (attempts < maxAttempts) {
         // Webflow not ready yet — keep polling every 100 ms
         setTimeout(tryInit, 100)
@@ -91,7 +113,10 @@ export function WebflowInit({
     // Short initial delay so the DOM has been painted before we touch Webflow
     setTimeout(tryInit, 80)
 
-    return () => { cancelled = true }
+    return () => {
+      cancelled = true
+      abortCtrl.abort() // removes the tablet hamburger listener cleanly
+    }
   }, [pageId, siteId])
 
   return null
