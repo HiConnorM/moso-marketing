@@ -111,6 +111,15 @@ export default function FreeAuditPage() {
           </div>
         </section>
 
+        {/* Secondary CTA */}
+        <section className="audit-trust" style={{borderTop: '1px solid #e5e5e5', paddingTop: '2rem', paddingBottom: '2rem'}}>
+          <div className="audit-container" style={{textAlign: 'center'}}>
+            <a href="/quote-builder" style={{color: '#111', textDecoration: 'underline', fontSize: '0.95rem'}}>
+              Not sure where to start? Build your MOSO project estimate →
+            </a>
+          </div>
+        </section>
+
         {/* Trust strip */}
         <section className="audit-trust">
           <div className="audit-container">

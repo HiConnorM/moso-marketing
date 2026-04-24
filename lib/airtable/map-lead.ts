@@ -1,18 +1,11 @@
 import type { AuditLead } from '../../types/lead'
 import type { AIReport } from '../../types/audit'
 import { getContactsTable, getSignalsTable } from './client'
+import { findContactByEmail } from './helpers'
+import { splitName } from '../utils/format'
 import { logger } from '../utils/logger'
 
-// ─── Helpers ────────────────────────────────────────────────
-
-function splitName(fullName: string | null): { first: string; last: string } {
-  if (!fullName?.trim()) return { first: '', last: '' }
-  const parts = fullName.trim().split(/\s+/)
-  return {
-    first: parts[0],
-    last: parts.length > 1 ? parts.slice(1).join(' ') : '',
-  }
-}
+// ─── Helpers ─────────────────────────────────────────────────────────────────
 
 function getProblemAwareness(score: number): string {
   if (score < 45) return 'High'
@@ -26,28 +19,7 @@ function getUrgency(temp: 'hot' | 'warm' | 'cold'): string {
   return 'Low'
 }
 
-// ─── Find existing contact by email ─────────────────────────
-
-async function findContactByEmail(email: string): Promise<string | null> {
-  try {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const contacts = getContactsTable() as any
-    const records = await contacts
-      .select({
-        filterByFormula: `{Email Address} = "${email.replace(/"/g, '\\"')}"`,
-        maxRecords: 1,
-        fields: ['Email Address'],
-      })
-      .firstPage()
-
-    return records.length > 0 ? records[0].id : null
-  } catch (err) {
-    logger.warn('Airtable contact lookup failed', err)
-    return null
-  }
-}
-
-// ─── Main export ─────────────────────────────────────────────
+// ─── Main export ─────────────────────────────────────────────────────────────
 
 export async function upsertAirtableLead(
   lead: AuditLead,

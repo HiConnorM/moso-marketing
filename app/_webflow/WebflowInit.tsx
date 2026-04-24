@@ -74,15 +74,27 @@ export function WebflowInit({
         const pw = document.querySelector<HTMLElement>(".page-wrapper")
         if (pw) pw.style.opacity = "1"
 
-        // Hide the mobile nav menu if it's not open (Webflow positions it at
-        // top:-Npx but parent overflow:visible lets it bleed into the viewport)
+        // On mobile viewports, hide the nav menu when closed so it doesn't
+        // bleed into the viewport (Webflow positions it at top:-Npx but
+        // parent overflow:visible lets it show). On desktop the menu is always
+        // visible — only apply this treatment when the hamburger button is
+        // actually rendered (i.e. we're in a collapsed breakpoint).
         const navMenu = document.querySelector<HTMLElement>(".navbar-menu.w-nav-menu")
-        if (navMenu && !navMenu.classList.contains("w--open")) {
+        const navBtn = document.querySelector<HTMLElement>(".w-nav-button")
+        const isCollapsedViewport = navBtn
+          ? getComputedStyle(navBtn).display !== "none"
+          : false
+
+        if (isCollapsedViewport && navMenu && !navMenu.classList.contains("w--open")) {
           navMenu.style.opacity = "0"
           navMenu.style.pointerEvents = "none"
+        } else if (navMenu) {
+          // Desktop: ensure any stale inline opacity is cleared
+          navMenu.style.opacity = ""
+          navMenu.style.pointerEvents = ""
         }
-        // Re-show it when Webflow opens it
-        const navBtn = document.querySelector(".w-nav-button")
+
+        // Re-show the menu when the hamburger is tapped on mobile
         if (navBtn) {
           navBtn.addEventListener("click", () => {
             if (navMenu) {
