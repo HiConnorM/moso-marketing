@@ -54,12 +54,15 @@ export function WebflowInit({
     const navMenu   = document.querySelector<HTMLElement>(".w-nav-menu")
 
     if (hamburger && navMenu) {
-      hamburger.addEventListener("click", () => {
+      hamburger.addEventListener("click", (e) => {
         const vw = window.innerWidth
-        // Only act in the range where Webflow.js won't (480–991 px).
-        // At ≤479 px Webflow.js handles it natively; at ≥992 px the
-        // hamburger isn't visible so this is a no-op either way.
-        if (vw > 479 && vw <= 991) {
+        if (vw <= 991) {
+          // Take full control of the hamburger for all mobile/tablet widths.
+          // stopImmediatePropagation prevents Webflow.js from running its own
+          // handler (which uses data-nav-menu-open + overlay instead of
+          // w--open, conflicting with our CSS). Our listener is registered
+          // before Webflow.ready() fires, so it is always first in the queue.
+          e.stopImmediatePropagation()
           const opening = !navMenu.classList.contains("w--open")
           navMenu.classList.toggle("w--open", opening)
           hamburger.classList.toggle("w--open", opening)
