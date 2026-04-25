@@ -69,7 +69,12 @@ html {
 
   /* Bounce in when our handler adds w--open */
   .navbar-menu.w-nav-menu.w--open {
-    display: flex !important;  /* override webflow.css display:none at ≤479px */
+    display: flex !important;           /* override webflow.css display:none at ≤479px */
+    flex-direction: column !important;  /* stack links vertically */
+    position: absolute !important;      /* keep inside the navbar wrapper */
+    top: 100% !important;               /* drop below the 80px navbar bar */
+    left: 0 !important;
+    right: 0 !important;
     opacity: 1 !important;
     pointer-events: auto !important;
     animation: liquidGlassIn 0.52s cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
