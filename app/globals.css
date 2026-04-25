@@ -18,6 +18,29 @@ html {
   100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
+/* Webflow CSS sets .navbar { display: none } at max-width 767px but only
+   restores it at max-width 479px, leaving 480–767px with no navbar at all.
+   Override here so the navbar is always visible on every mobile viewport. */
+@media (max-width: 767px) {
+  .navbar {
+    display: block !important;
+  }
+  /* Always use mobile logo in this range */
+  .navbar-logo-desktop {
+    display: none !important;
+  }
+  .navbar-logo-mobile {
+    display: block !important;
+  }
+}
+
+/* Base .image-2 is width:50% which blows up the SVG circle logo on
+   viewports where the 479px rule (width:50px) doesn't apply. */
+.navbar-logo-mobile .image-2 {
+  width: 44px !important;
+  height: 44px !important;
+}
+
 /* Glass panel visual treatment — applies at tablet + mobile */
 @media (max-width: 991px) {
   .navbar-menu.w-nav-menu {
