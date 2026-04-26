@@ -106,33 +106,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "nagoya",
-    title: "Nagoya",
-    client: "Nagoya Japanese Restaurant",
-    category: "Branding & Web Design",
-    year: "2025",
-    tags: ["Website", "Design", "Branding"],
-    thumbnail: "/images/projects/nagoya-1.png",
-    heroImage: "/images/projects/nagoya-2.png",
-    description:
-      "A refined brand and digital identity for an upscale Japanese restaurant — where bold color meets precision craft, and every design decision honors the experience of the cuisine.",
-    challenge:
-      "Nagoya had the food, the atmosphere, and the loyal guests — but their visual identity didn't match the level of experience they were delivering. They needed a brand that felt like a destination, not just a listing.",
-    solution:
-      "We developed a brand identity with a striking coral-red palette, a custom calligraphic mark inspired by Japanese artistry, and bold wordmark typography. The website brought it all together: dynamic layout, clear menu hierarchy, and a reservation flow designed to convert.",
-    results: [
-      "Brand identity elevated perceived positioning to match premium pricing",
-      "Website established Nagoya as a destination dining experience",
-      "Design system scaled across menus, signage, and digital touchpoints",
-      "Visual language created a consistent, memorable brand impression",
-    ],
-    gallery: [
-      "/images/projects/nagoya-2.png",
-      "/images/projects/nagoya-1.png",
-    ],
-    featured: false,
-  },
-  {
     slug: "satora",
     title: "Satora",
     client: "Satora Bio-engineering Labs",
