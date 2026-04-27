@@ -1,1 +1,5 @@
-Non-image binary files cannot be read directly. It is available at the following URL: https://v0chat-agent-data-prod.s3.us-east-1.amazonaws.com/vm-binary/TDpKX8E1WAb/35e0701512a9ecbc6ab96f17152130c38f294699e1a89b7862625d76ca4eb548.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA52KF4VHQDTZ5RDMT%2F20260331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260331T063815Z&X-Amz-Expires=3600&X-Amz-Signature=01ec3eb9dde099aa811e24e47ab67388afb47a0cc461ea825f318c429f2c9eca&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M12 4V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M5.072 8L18.928 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M18.928 8L5.072 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

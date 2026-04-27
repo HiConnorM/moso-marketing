@@ -1,1 +1,8 @@
-Non-image binary files cannot be read directly. It is available at the following URL: https://v0chat-agent-data-prod.s3.us-east-1.amazonaws.com/vm-binary/TDpKX8E1WAb/cfe7bc0c99a1a61d2c5ad923d2d5f53821ee1b135eebae0e9e505603fb767021.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA52KF4VHQDTZ5RDMT%2F20260331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260331T063814Z&X-Amz-Expires=3600&X-Amz-Signature=eca7430e300749ff214456f0fe6f01c20b0910398417c2466829728fea0694be&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M10 1.5C10 1.5 7 5 7 10C7 15 10 18.5 10 18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M10 1.5C10 1.5 13 5 13 10C13 15 10 18.5 10 18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M1.5 10H18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M2.5 6.5H17.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M2.5 13.5H17.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+</svg>
