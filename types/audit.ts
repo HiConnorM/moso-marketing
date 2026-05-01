@@ -12,29 +12,39 @@ export interface PageSpeedResult {
 
 export interface SiteSignals {
   url: string
+  // ── Metadata ──────────────────────────────────────────────────
   title: string | null
   titleLength: number
   metaDescription: string | null
   metaDescriptionLength: number
+  // ── Headings ──────────────────────────────────────────────────
   h1s: string[]
   h2s: string[]
+  h3Count: number
+  // ── Structured data ───────────────────────────────────────────
   hasFaqSchema: boolean
   hasOrganizationSchema: boolean
   hasLocalBusinessSchema: boolean
   hasArticleSchema: boolean
   hasServiceSchema: boolean
+  hasPersonSchema: boolean
+  hasWebSiteSchema: boolean
+  hasBreadcrumbSchema: boolean
+  hasReviewSchema: boolean
   structuredDataTypes: string[]
+  hasStructuredData: boolean
+  // ── Crawlability / technical ──────────────────────────────────
   canonical: string | null
   internalLinksCount: number
   sampleInternalLinks: string[]
   hasOgTags: boolean
   hasTwitterCards: boolean
-  hasStructuredData: boolean
   robotsStatus: number | null
   robotsContent: string | null
   sitemapFound: boolean
   sitemapUrl: string | null
   isHttps: boolean
+  // ── Content signals ────────────────────────────────────────────
   ctaCount: number
   hasPhoneNumber: boolean
   hasAddress: boolean
@@ -42,15 +52,47 @@ export interface SiteSignals {
   imageCount: number
   imagesWithAlt: number
   imagesWithoutAlt: number
+  // ── GEO / entity clarity signals ──────────────────────────────
+  hasTestimonials: boolean
+  hasCaseStudies: boolean
+  hasAboutPage: boolean
+  hasServicePages: boolean
+  hasContactPage: boolean
+  hasBlogContent: boolean
+  hasDefinitions: boolean
+  hasProcessContent: boolean
+  hasLocationContent: boolean
+  hasComparisonContent: boolean
+  namedServicesCount: number
+  brandNameInTitle: boolean
+  brandNameInH1: boolean
+  hasNapData: boolean           // name + address + phone all present
+  hasExternalProfiles: boolean  // LinkedIn, Google Business, etc.
+  hasCredentials: boolean       // awards, certifications, press
+  hasFounderInfo: boolean       // team/founder page or bio
 }
 
+// ── Score shapes ──────────────────────────────────────────────────────────────
+
 export interface CategoryScores {
-  technicalSeo: number
-  performance: number
-  onPageSeo: number
-  aeoReadiness: number
-  uxConversion: number
+  seo: number
+  aeo: number
+  geo: number
+  ux: number
 }
+
+export interface TeaserResults {
+  overallScore: number
+  seoScore: number
+  aeoScore: number
+  geoScore: number
+  uxScore: number
+  strongestArea: string
+  biggestBlocker: string
+  quickWins: string[]
+}
+
+// ── Raw / combined audit data ─────────────────────────────────────────────────
 
 export interface AuditRawResults {
   url: string
@@ -59,8 +101,11 @@ export interface AuditRawResults {
   signals: SiteSignals
   categoryScores: CategoryScores
   overallScore: number
+  teaserResults: TeaserResults
   auditedAt: string
 }
+
+// ── AI-generated report ───────────────────────────────────────────────────────
 
 export interface AuditRecommendation {
   priority: 'high' | 'medium' | 'low'
@@ -76,22 +121,30 @@ export interface AIReport {
   overallScore: number
   categoryScores: CategoryScores
   categoryLabels: {
-    technicalSeo: string
-    performance: string
-    onPageSeo: string
-    aeoReadiness: string
-    uxConversion: string
+    seo: string
+    aeo: string
+    geo: string
+    ux: string
   }
   topFindings: string[]
+  seoFindings: string[]
+  aeoFindings: string[]
+  geoFindings: string[]
+  uxFindings: string[]
   quickWins: AuditRecommendation[]
   biggestBlockers: AuditRecommendation[]
   prioritizedRoadmap: AuditRecommendation[]
+  sevenDayPlan: string[]
+  thirtyDayPlan: string[]
+  ninetyDayPlan: string[]
   recommendedMosoService: string
   ctaMessage: string
   leadTemperature: 'hot' | 'warm' | 'cold'
   recommendedOffer: string
   auditSummaryForCrm: string
 }
+
+// ── Database record shapes ────────────────────────────────────────────────────
 
 export interface SiteAudit {
   id: string
@@ -105,4 +158,10 @@ export interface SiteAudit {
   completed_at: string | null
 }
 
-export type AuditStatus = 'queued' | 'running' | 'completed' | 'failed'
+export type AuditStatus =
+  | 'queued'
+  | 'running'
+  | 'teaser_ready'
+  | 'email_sent'
+  | 'completed'   // legacy from old flow
+  | 'failed'
