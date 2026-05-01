@@ -99,7 +99,7 @@ export async function sendAuditReport({
     const result = await resend.emails.send({
       from: getEnv('AUDIT_FROM_EMAIL'),
       to,
-      subject: `Your Free AEO + SEO Audit — ${company}`,
+      subject: `Your SEO + AEO + GEO Audit — ${company}`,
       html: htmlReport,
       text: `Hi ${greeting}, your MOSO AEO/SEO audit for ${company} is ready. Please view this email in an HTML-capable email client for the full report.`,
     })
